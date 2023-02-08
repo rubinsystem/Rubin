@@ -4,7 +4,7 @@
 
 - new config settings will soon be added...
 
-- version 1.0 dubbed
+- version 1.0 dubbed feb 2023
 
 -fileio component has been replaced with controller,
 

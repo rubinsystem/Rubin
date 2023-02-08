@@ -1,7 +1,7 @@
-##installer version 1.2 pkg v 0.0.0 no package included
-
+##installer version 1.2 pkg v 0.0.0 no package included, paste one into the last line of the file, you can generate one using install.build_package
+## second warning, this file will not work until you add a package to the last line
 #begin
-puts "Welcome to the Rubin installer system version 2.0.7.4"
+puts "Welcome to the Rubin System installer."
 
 launch_directory=Dir.getwd
 launch_time=Time.now

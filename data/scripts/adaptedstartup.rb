@@ -1,3 +1,5 @@
+#
+
 new_homedir = Dir.getwd.downcase.split("/rubin/")[0]+"/rubin"
 
 puts "New home dir? "+new_homedir.to_s

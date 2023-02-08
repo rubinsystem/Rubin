@@ -5271,3 +5271,331 @@ E:/Rubin/launch.rb:4:in `<main>'
 2023.02.08.09.01.44: 54757: System startup successfull.
 2023.02.08.09.01.44: 54757: Outdated instance file removed. (73963.dat ; 2023.02.08.08.54.32 )
 2023.02.08.09.01.44: 54757: Starting system shell.
+2023.02.08.09.13.25: 11393: System config was loaded.
+2023.02.08.09.13.25: 11393: Searching for classes to load.
+2023.02.08.09.13.25: 11393: Attempted to load system classes but there were none.
+2023.02.08.09.13.25: 11393: Loading system components: ["controller.rb", "daemond.rb", "dictionary.rb", "host.rb", "install.rb", "instance.rb", "network.rb", "rubin.rb", "ruby.rb", "definitions.rb"]
+2023.02.08.09.13.25: 11393: Initializing component: Controller
+2023.02.08.09.13.25: 11393: Initializing component: Dictionary
+2023.02.08.09.13.25: 11393: Initializing component: Host_Manager
+2023.02.08.09.13.25: 11393: Initializing component: Installation_Manager
+2023.02.08.09.13.25: 11393: Initializing component: Instance
+2023.02.08.09.13.25: 11393: Initializing component: Network_Manager
+2023.02.08.09.13.25: 11393: Initializing component: Ruby_Manager
+2023.02.08.09.13.25: 11393: An error occured: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.08.09.13.25: 11393: Initialization finished.
+2023.02.08.09.13.25: 11393: System daemond has started.
+2023.02.08.09.13.25: 11393: Outdated instance file removed. (54757.dat ; 2023.02.08.09.02.04 )
+2023.02.08.09.13.25: 11393: System startup successfull.
+2023.02.08.09.13.25: 11393: Starting system shell.
+2023.02.08.09.14.27: 80724: System config was loaded.
+2023.02.08.09.14.27: 80724: Searching for classes to load.
+2023.02.08.09.14.27: 80724: Attempted to load system classes but there were none.
+2023.02.08.09.14.27: 80724: Loading system components: ["controller.rb", "daemond.rb", "dictionary.rb", "host.rb", "install.rb", "instance.rb", "network.rb", "rubin.rb", "ruby.rb", "definitions.rb"]
+2023.02.08.09.14.27: 80724: Initializing component: Controller
+2023.02.08.09.14.27: 80724: Initializing component: Dictionary
+2023.02.08.09.14.27: 80724: Initializing component: Host_Manager
+2023.02.08.09.14.27: 80724: Initializing component: Installation_Manager
+2023.02.08.09.14.27: 80724: Initializing component: Instance
+2023.02.08.09.14.27: 80724: Initializing component: Network_Manager
+2023.02.08.09.14.27: 80724: Initializing component: Ruby_Manager
+2023.02.08.09.14.27: 80724: An error occured: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.08.09.14.27: 80724: Initialization finished.
+2023.02.08.09.14.27: 80724: System daemond has started.
+2023.02.08.09.14.27: 80724: System startup successfull.
+2023.02.08.09.14.27: 80724: Starting system shell.
+2023.02.08.09.14.37: 80724: Outdated instance file removed. (11393.dat ; 2023.02.08.09.14.20 )
+2023.02.08.09.19.04: 64993: System config was loaded.
+2023.02.08.09.19.04: 64993: Searching for classes to load.
+2023.02.08.09.19.04: 64993: Attempted to load system classes but there were none.
+2023.02.08.09.19.04: 64993: Loading system components: ["controller.rb", "daemond.rb", "dictionary.rb", "host.rb", "install.rb", "instance.rb", "network.rb", "rubin.rb", "ruby.rb", "definitions.rb"]
+2023.02.08.09.19.04: 64993: Initializing component: Controller
+2023.02.08.09.19.04: 64993: Initializing component: Dictionary
+2023.02.08.09.19.04: 64993: Initializing component: Host_Manager
+2023.02.08.09.19.04: 64993: Initializing component: Installation_Manager
+2023.02.08.09.19.04: 64993: Initializing component: Instance
+2023.02.08.09.19.04: 64993: Initializing component: Network_Manager
+2023.02.08.09.19.04: 64993: Initializing component: Ruby_Manager
+2023.02.08.09.19.04: 64993: An error occured: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.08.09.19.04: 64993: Initialization finished.
+2023.02.08.09.19.04: 64993: System daemond has started.
+2023.02.08.09.19.04: 64993: System startup successfull.ved. (80724.dat ; 2023.02.08.09.14.37 )
+2023.02.08.09.19.04: 64993: Starting system shell.
+2023.02.08.09.22.34: 58732: System config was loaded.
+2023.02.08.09.22.34: 58732: Searching for classes to load.
+2023.02.08.09.22.34: 58732: Attempted to load system classes but there were none.
+2023.02.08.09.22.34: 58732: Loading system components: ["controller.rb", "daemond.rb", "dictionary.rb", "host.rb", "install.rb", "instance.rb", "network.rb", "rubin.rb", "ruby.rb", "definitions.rb"]
+2023.02.08.09.22.34: 58732: Initializing component: Controller
+2023.02.08.09.22.34: 58732: Initializing component: Dictionary
+2023.02.08.09.22.34: 58732: Initializing component: Host_Manager
+2023.02.08.09.22.34: 58732: Initializing component: Installation_Manager
+2023.02.08.09.22.34: 58732: Initializing component: Instance
+2023.02.08.09.22.34: 58732: Initializing component: Network_Manager
+2023.02.08.09.22.34: 58732: Initializing component: Ruby_Manager
+2023.02.08.09.22.34: 58732: An error occured: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.08.09.22.34: 58732: Initialization finished.
+2023.02.08.09.22.34: 58732: System daemond has started.
+2023.02.08.09.22.34: 58732: System startup successfull.
+2023.02.08.09.22.34: 58732: Outdated instance file removed. (64993.dat ; 2023.02.08.09.19.09 )
+2023.02.08.09.22.34: 58732: Starting system shell.
+2023.02.08.09.51.41: 24602: System config was loaded.
+2023.02.08.09.51.41: 24602: Searching for classes to load.
+2023.02.08.09.51.41: 24602: Attempted to load system classes but there were none.
+2023.02.08.09.51.41: 24602: Loading system components: ["controller.rb", "daemond.rb", "dictionary.rb", "host.rb", "install.rb", "instance.rb", "network.rb", "rubin.rb", "ruby.rb", "definitions.rb"]
+2023.02.08.09.51.41: 24602: Initializing component: Controller
+2023.02.08.09.51.41: 24602: Initializing component: Dictionary
+2023.02.08.09.51.41: 24602: Initializing component: Host_Manager
+2023.02.08.09.51.41: 24602: Initializing component: Installation_Manager
+2023.02.08.09.51.41: 24602: Initializing component: Instance
+2023.02.08.09.51.41: 24602: Initializing component: Network_Manager
+2023.02.08.09.51.41: 24602: Initializing component: Ruby_Manager
+2023.02.08.09.51.41: 24602: An error occured: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.08.09.51.41: 24602: Initialization finished.
+2023.02.08.09.51.41: 24602: System daemond has started.
+2023.02.08.09.51.41: 24602: System startup successfull.
+2023.02.08.09.51.41: 24602: Outdated instance file removed. (58732.dat ; 2023.02.08.09.23.04 )
+2023.02.08.09.51.41: 24602: Starting system shell.
+2023.02.08.09.54.44: 30982: System config was loaded.
+2023.02.08.09.54.44: 30982: Searching for classes to load.
+2023.02.08.09.54.44: 30982: Attempted to load system classes but there were none.
+2023.02.08.09.54.44: 30982: Loading system components: ["controller.rb", "daemond.rb", "dictionary.rb", "host.rb", "install.rb", "instance.rb", "network.rb", "rubin.rb", "ruby.rb", "definitions.rb"]
+2023.02.08.09.54.44: 30982: Initializing component: Controller
+2023.02.08.09.54.44: 30982: Initializing component: Dictionary
+2023.02.08.09.54.44: 30982: Initializing component: Host_Manager
+2023.02.08.09.54.45: 30982: Initializing component: Installation_Manager
+2023.02.08.09.54.45: 30982: Initializing component: Instance
+2023.02.08.09.54.45: 30982: Initializing component: Network_Manager
+2023.02.08.09.54.45: 30982: Initializing component: Ruby_Manager
+2023.02.08.09.54.45: 30982: An error occured: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.08.09.54.45: 30982: Initialization finished.
+2023.02.08.09.54.45: 30982: System daemond has started.
+2023.02.08.09.54.45: 30982: System startup successfull.
+2023.02.08.09.54.45: 30982: Starting system shell.
+2023.02.08.09.54.55: 30982: Outdated instance file removed. (24602.dat ; 2023.02.08.09.54.37 )
+2023.02.08.09.56.13: 19807: System config was loaded.
+2023.02.08.09.56.13: 19807: Searching for classes to load.
+2023.02.08.09.56.13: 19807: Attempted to load system classes but there were none.
+2023.02.08.09.56.13: 19807: Loading system components: ["controller.rb", "daemond.rb", "dictionary.rb", "host.rb", "install.rb", "instance.rb", "network.rb", "rubin.rb", "ruby.rb", "definitions.rb"]
+2023.02.08.09.56.13: 19807: Initializing component: Controller
+2023.02.08.09.56.13: 19807: Initializing component: Dictionary
+2023.02.08.09.56.13: 19807: Initializing component: Host_Manager
+2023.02.08.09.56.13: 19807: Initializing component: Installation_Manager
+2023.02.08.09.56.13: 19807: Initializing component: Instance
+2023.02.08.09.56.13: 19807: Initializing component: Network_Manager
+2023.02.08.09.56.13: 19807: Initializing component: Ruby_Manager
+2023.02.08.09.56.13: 19807: An error occured: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.08.09.56.13: 19807: Initialization finished.
+2023.02.08.09.56.13: 19807: System daemond has started.
+2023.02.08.09.56.13: 19807: System startup successfull.
+2023.02.08.09.56.13: 19807: Starting system shell.
+2023.02.08.09.56.23: 19807: Outdated instance file removed. (30982.dat ; 2023.02.08.09.56.05 )
+2023.02.08.09.56.47: 19807: System config saved.
+2023.02.08.09.56.50: 16176: System config was loaded.
+2023.02.08.09.56.50: 16176: Searching for classes to load.
+2023.02.08.09.56.50: 16176: Attempted to load system classes but there were none.
+2023.02.08.09.56.50: 16176: Loading system components: ["controller.rb", "daemond.rb", "dictionary.rb", "host.rb", "install.rb", "instance.rb", "network.rb", "rubin.rb", "ruby.rb", "definitions.rb"]
+2023.02.08.09.56.50: 16176: Initializing component: Controller
+2023.02.08.09.56.50: 16176: Initializing component: Dictionary
+2023.02.08.09.56.50: 16176: Initializing component: Host_Manager
+2023.02.08.09.56.51: 16176: Initializing component: Installation_Manager
+2023.02.08.09.56.51: 16176: Initializing component: Instance
+2023.02.08.09.56.51: 16176: Initializing component: Network_Manager
+2023.02.08.09.56.51: 16176: Initializing component: Ruby_Manager
+2023.02.08.09.56.51: 16176: Controller bound to dir:E:/RubinSystem/Rubin/data/fileio_public
+2023.02.08.09.56.51: 16176: Initialization finished.
+2023.02.08.09.56.51: 16176: System daemond has started.
+2023.02.08.09.56.51: 16176: System startup successfull.
+2023.02.08.09.56.51: 16176: Starting system shell.
+2023.02.08.09.57.06: 16176: Outdated instance file removed. (19807.dat ; 2023.02.08.09.56.48 )
+2023.02.08.12.29.22: 30540: System config was loaded.
+2023.02.08.12.29.22: 30540: Searching for classes to load.
+2023.02.08.12.29.22: 30540: Attempted to load system classes but there were none.
+2023.02.08.12.29.22: 30540: Loading system components: ["controller.rb", "daemond.rb", "dictionary.rb", "host.rb", "install.rb", "instance.rb", "network.rb", "rubin.rb", "ruby.rb", "definitions.rb"]
+2023.02.08.12.29.22: 30540: Initializing component: Controller
+2023.02.08.12.29.22: 30540: Initializing component: Dictionary
+2023.02.08.12.29.22: 30540: Initializing component: Host_Manager
+2023.02.08.12.29.22: 30540: Initializing component: Installation_Manager
+2023.02.08.12.29.22: 30540: Initializing component: Instance
+2023.02.08.12.29.22: 30540: Initializing component: Network_Manager
+2023.02.08.12.29.22: 30540: Initializing component: Ruby_Manager
+2023.02.08.12.29.22: 30540: Controller bound to dir:E:/RubinSystem/Rubin/data/fileio_public
+2023.02.08.12.29.22: 30540: Initialization finished.
+2023.02.08.12.29.22: 30540: Fileio deleted an old link: E:/RubinSystem/Rubin/data/fileio_public/fileio_link-80510.txt
+2023.02.08.12.29.22: 30540: Fileio deleted an old link: E:/RubinSystem/Rubin/data/fileio_public/fileio_link-7962.txt
+2023.02.08.12.29.22: 30540: System daemond has started.
+2023.02.08.12.29.22: 30540: System startup successfull.
+2023.02.08.12.29.22: 30540: Starting system shell.
+2023.02.08.12.29.27: 30540: Fileio deleted an old link: E:/RubinSystem/Rubin/data/fileio_public/fileio_link-16176.txt
+2023.02.08.12.29.32: 30540: Outdated instance file removed. (16176.dat ; 2023.02.08.12.29.14 )
+2023.02.08.12.38.20: 81841: System config was loaded.
+2023.02.08.12.38.20: 81841: Searching for classes to load.
+2023.02.08.12.38.20: 81841: Attempted to load system classes but there were none.
+2023.02.08.12.38.20: 81841: Loading system components: ["controller.rb", "daemond.rb", "dictionary.rb", "host.rb", "install.rb", "instance.rb", "network.rb", "rubin.rb", "ruby.rb", "definitions.rb"]
+2023.02.08.12.38.20: 81841: Initializing component: Controller
+2023.02.08.12.38.20: 81841: Initializing component: Dictionary
+2023.02.08.12.38.21: 81841: Initializing component: Host_Manager
+2023.02.08.12.38.21: 81841: Initializing component: Installation_Manager
+2023.02.08.12.38.21: 81841: Initializing component: Instance
+2023.02.08.12.38.21: 81841: Initializing component: Network_Manager
+2023.02.08.12.38.21: 81841: Initializing component: Ruby_Manager
+2023.02.08.12.38.21: 81841: Controller bound to dir:E:/RubinSystem/Rubin/data/fileio_public
+2023.02.08.12.38.21: 81841: Initialization finished.
+2023.02.08.12.38.21: 81841: Fileio deleted an old link: E:/RubinSystem/Rubin/data/fileio_public/fileio_link-30540.txt
+2023.02.08.12.38.21: 81841: System daemond has started.
+2023.02.08.12.38.21: 81841: System startup successfull.
+2023.02.08.12.38.21: 81841: Starting system shell.
+2023.02.08.12.38.21: 81841: Outdated instance file removed. (30540.dat ; 2023.02.08.12.32.13 )
+2023.02.08.12.38.24: 81841: Loading app file: bilbo.rb
+2023.02.08.12.38.24: 81841: App load success: bilbo
+2023.02.08.12.43.51: 84554: System config was loaded.
+2023.02.08.12.43.52: 84554: Searching for classes to load.
+2023.02.08.12.43.52: 84554: Attempted to load system classes but there were none.
+2023.02.08.12.43.52: 84554: Loading system components: ["controller.rb", "daemond.rb", "dictionary.rb", "host.rb", "install.rb", "instance.rb", "network.rb", "rubin.rb", "ruby.rb", "definitions.rb"]
+2023.02.08.12.43.52: 84554: Initializing component: Controller
+2023.02.08.12.43.52: 84554: Initializing component: Dictionary
+2023.02.08.12.43.52: 84554: Initializing component: Host_Manager
+2023.02.08.12.43.52: 84554: Initializing component: Installation_Manager
+2023.02.08.12.43.52: 84554: Initializing component: Instance
+2023.02.08.12.43.52: 84554: Initializing component: Network_Manager
+2023.02.08.12.43.52: 84554: Initializing component: Ruby_Manager
+2023.02.08.12.43.52: 84554: Controller bound to dir:E:/RubinSystem/Rubin/data/fileio_public
+2023.02.08.12.43.52: 84554: Initialization finished.
+2023.02.08.12.43.52: 84554: Fileio deleted an old link: E:/RubinSystem/Rubin/data/fileio_public/fileio_link-81841.txt
+2023.02.08.12.43.52: 84554: System daemond has started.
+2023.02.08.12.43.52: 84554: System startup successfull.
+2023.02.08.12.43.52: 84554: Outdated instance file removed. (81841.dat ; 2023.02.08.12.39.41 )
+2023.02.08.12.43.52: 84554: Starting system shell.
+2023.02.08.12.43.58: 84554: Loading app file: bilbo.rb
+2023.02.08.12.43.58: 84554: App load success: bilbo
+2023.02.08.13.03.07: 56196: System config was loaded.
+2023.02.08.13.03.07: 56196: Searching for classes to load.
+2023.02.08.13.03.07: 56196: Classes found: -1
+2023.02.08.13.03.07: 56196: Loaded class: page_info.rb
+2023.02.08.13.03.07: 56196: Loading system components: ["controller.rb", "daemond.rb", "dictionary.rb", "host.rb", "install.rb", "instance.rb", "network.rb", "rubin.rb", "ruby.rb", "definitions.rb"]
+2023.02.08.13.03.07: 56196: Initializing component: Controller
+2023.02.08.13.03.07: 56196: Initializing component: Dictionary
+2023.02.08.13.03.07: 56196: Initializing component: Host_Manager
+2023.02.08.13.03.07: 56196: Initializing component: Installation_Manager
+2023.02.08.13.03.07: 56196: Initializing component: Instance
+2023.02.08.13.03.07: 56196: Initializing component: Network_Manager
+2023.02.08.13.03.07: 56196: Initializing component: Ruby_Manager
+2023.02.08.13.03.07: 56196: Controller bound to dir:E:/RubinSystem/Rubin/data/fileio_public
+2023.02.08.13.03.07: 56196: Initialization finished.
+2023.02.08.13.03.07: 56196: System daemond has started.
+2023.02.08.13.03.07: 56196: System startup successfull.
+2023.02.08.13.03.07: 56196: Starting system shell.
+2023.02.08.13.03.17: 56196: Outdated instance file removed. (84554.dat ; 2023.02.08.13.03.01 )
+2023.02.08.13.03.25: 56196: Loading app file: bilbo.rb
+2023.02.08.13.03.25: 56196: App load failed: bilbo
+2023.02.08.13.03.25: 56196: An error occured: App encountered an exception.
+File exists @ dir_s_mkdir - E:/RubinSystem/Rubin/data/appdata/bilbodatabase/bank/default
+(eval):34:in `mkdir'
+(eval):34:in `initialize'
+(eval):245:in `new'
+(eval):245:in `run'
+E:/RubinSystem/Rubin/system/rubin.rb:647:in `eval'
+E:/RubinSystem/Rubin/system/rubin.rb:647:in `run'
+(eval):1:in `start'
+E:/RubinSystem/Rubin/system/rubin.rb:994:in `instance_eval'
+E:/RubinSystem/Rubin/system/rubin.rb:994:in `start'
+E:/RubinSystem/Rubin/system/rubin.rb:372:in `post_initialization'
+E:/RubinSystem/Rubin/system/rubin.rb:1023:in `<top (required)>'
+E:/RubinSystem/Rubin/launch.rb:4:in `load'
+E:/RubinSystem/Rubin/launch.rb:4:in `<main>'
+2023.02.08.13.04.27: 11505: System config was loaded.
+2023.02.08.13.04.27: 11505: Searching for classes to load.
+2023.02.08.13.04.27: 11505: Classes found: -1
+2023.02.08.13.04.27: 11505: Loaded class: page_info.rb
+2023.02.08.13.04.27: 11505: Loading system components: ["controller.rb", "daemond.rb", "dictionary.rb", "host.rb", "install.rb", "instance.rb", "network.rb", "rubin.rb", "ruby.rb", "definitions.rb"]
+2023.02.08.13.04.28: 11505: Initializing component: Controller
+2023.02.08.13.04.28: 11505: Initializing component: Dictionary
+2023.02.08.13.04.28: 11505: Initializing component: Host_Manager
+2023.02.08.13.04.28: 11505: Initializing component: Installation_Manager
+2023.02.08.13.04.28: 11505: Initializing component: Instance
+2023.02.08.13.04.28: 11505: Initializing component: Network_Manager
+2023.02.08.13.04.28: 11505: Initializing component: Ruby_Manager
+2023.02.08.13.04.28: 11505: Controller bound to dir:E:/RubinSystem/Rubin/data/fileio_public
+2023.02.08.13.04.28: 11505: Initialization finished.
+2023.02.08.13.04.28: 11505: Fileio deleted an old link: E:/RubinSystem/Rubin/data/fileio_public/fileio_link-84554.txt
+2023.02.08.13.04.28: 11505: System daemond has started.
+2023.02.08.13.04.28: 11505: System startup successfull.
+2023.02.08.13.04.28: 11505: Starting system shell.
+2023.02.08.13.04.33: 11505: Fileio deleted an old link: E:/RubinSystem/Rubin/data/fileio_public/fileio_link-56196.txt
+2023.02.08.13.04.36: 11505: Loading app file: bilbo.rb
+2023.02.08.13.04.36: 11505: App load failed: bilbo
+2023.02.08.13.04.36: 11505: An error occured: App encountered an exception.
+File exists @ dir_s_mkdir - E:/RubinSystem/Rubin/data/appdata/bilbodatabase/bank/default
+(eval):34:in `mkdir'
+(eval):34:in `initialize'
+(eval):245:in `new'
+(eval):245:in `run'
+E:/RubinSystem/Rubin/system/rubin.rb:647:in `eval'
+E:/RubinSystem/Rubin/system/rubin.rb:647:in `run'
+(eval):1:in `start'
+E:/RubinSystem/Rubin/system/rubin.rb:994:in `instance_eval'
+E:/RubinSystem/Rubin/system/rubin.rb:994:in `start'
+E:/RubinSystem/Rubin/system/rubin.rb:372:in `post_initialization'
+E:/RubinSystem/Rubin/system/rubin.rb:1023:in `<top (required)>'
+E:/RubinSystem/Rubin/launch.rb:4:in `load'
+E:/RubinSystem/Rubin/launch.rb:4:in `<main>'
+2023.02.08.13.04.38: 11505: Outdated instance file removed. (56196.dat ; 2023.02.08.13.04.22 )
+2023.02.08.13.05.52: 61013: System config was loaded.
+2023.02.08.13.05.52: 61013: Searching for classes to load.
+2023.02.08.13.05.52: 61013: Classes found: -1
+2023.02.08.13.05.52: 61013: Loaded class: page_info.rb
+2023.02.08.13.05.52: 61013: Loading system components: ["controller.rb", "daemond.rb", "dictionary.rb", "host.rb", "install.rb", "instance.rb", "network.rb", "rubin.rb", "ruby.rb", "definitions.rb"]
+2023.02.08.13.05.52: 61013: Initializing component: Controller
+2023.02.08.13.05.52: 61013: Initializing component: Dictionary
+2023.02.08.13.05.52: 61013: Initializing component: Host_Manager
+2023.02.08.13.05.52: 61013: Initializing component: Installation_Manager
+2023.02.08.13.05.52: 61013: Initializing component: Instance
+2023.02.08.13.05.52: 61013: Initializing component: Network_Manager
+2023.02.08.13.05.52: 61013: Initializing component: Ruby_Manager
+2023.02.08.13.05.52: 61013: Controller bound to dir:E:/RubinSystem/Rubin/data/fileio_public
+2023.02.08.13.05.52: 61013: Initialization finished.
+2023.02.08.13.05.52: 61013: System daemond has started.
+2023.02.08.13.05.52: 61013: System startup successfull.
+2023.02.08.13.05.52: 61013: Starting system shell.
+2023.02.08.13.05.57: 61013: Loading app file: bilbo.rb
+2023.02.08.13.05.57: 61013: App load success: bilbo
+2023.02.08.13.06.07: 61013: Outdated instance file removed. (11505.dat ; 2023.02.08.13.05.48 )
+2023.02.08.13.10.06: 90224: System config was loaded.
+2023.02.08.13.10.06: 90224: Searching for classes to load.
+2023.02.08.13.10.06: 90224: Classes found: -1
+2023.02.08.13.10.06: 90224: Loaded class: page_info.rb
+2023.02.08.13.10.06: 90224: Loading system components: ["controller.rb", "daemond.rb", "dictionary.rb", "host.rb", "install.rb", "instance.rb", "network.rb", "rubin.rb", "ruby.rb", "definitions.rb"]
+2023.02.08.13.10.06: 90224: Initializing component: Controller
+2023.02.08.13.10.06: 90224: Initializing component: Dictionary
+2023.02.08.13.10.06: 90224: Initializing component: Host_Manager
+2023.02.08.13.10.06: 90224: Initializing component: Installation_Manager
+2023.02.08.13.10.06: 90224: Initializing component: Instance
+2023.02.08.13.10.06: 90224: Initializing component: Network_Manager
+2023.02.08.13.10.06: 90224: Initializing component: Ruby_Manager
+2023.02.08.13.10.06: 90224: Controller bound to dir:E:/RubinSystem/Rubin/data/fileio_public
+2023.02.08.13.10.06: 90224: Initialization finished.
+2023.02.08.13.10.06: 90224: Fileio deleted an old link: E:/RubinSystem/Rubin/data/fileio_public/fileio_link-11505.txt
+2023.02.08.13.10.06: 90224: System daemond has started.
+2023.02.08.13.10.06: 90224: System startup successfull.
+2023.02.08.13.10.06: 90224: Starting system shell.
+2023.02.08.13.10.15: 90224: Loading app file: bilbo.rb
+2023.02.08.13.10.15: 90224: App load success: bilbo
+2023.02.08.13.10.16: 90224: Fileio deleted an old link: E:/RubinSystem/Rubin/data/fileio_public/fileio_link-61013.txt
+2023.02.08.13.10.21: 90224: Outdated instance file removed. (61013.dat ; 2023.02.08.13.10.03 )
+2023.02.08.13.11.29: 45468: System config was loaded.
+2023.02.08.13.11.29: 45468: Searching for classes to load.
+2023.02.08.13.11.30: 45468: Classes found: -1
+2023.02.08.13.11.30: 45468: Loaded class: page_info.rb
+2023.02.08.13.11.30: 45468: Loading system components: ["controller.rb", "daemond.rb", "dictionary.rb", "host.rb", "install.rb", "instance.rb", "network.rb", "rubin.rb", "ruby.rb", "definitions.rb"]
+2023.02.08.13.11.30: 45468: Initializing component: Controller
+2023.02.08.13.11.30: 45468: Initializing component: Dictionary
+2023.02.08.13.11.30: 45468: Initializing component: Host_Manager
+2023.02.08.13.11.30: 45468: Initializing component: Installation_Manager
+2023.02.08.13.11.30: 45468: Initializing component: Instance
+2023.02.08.13.11.30: 45468: Initializing component: Network_Manager
+2023.02.08.13.11.30: 45468: Initializing component: Ruby_Manager
+2023.02.08.13.11.30: 45468: Controller bound to dir:E:/RubinSystem/Rubin/data/fileio_public
+2023.02.08.13.11.30: 45468: Initialization finished.
+2023.02.08.13.11.30: 45468: System daemond has started.
+2023.02.08.13.11.30: 45468: System startup successfull.
+2023.02.08.13.11.30: 45468: Starting system shell.
+2023.02.08.13.11.45: 45468: Outdated instance file removed. (90224.dat ; 2023.02.08.13.11.26 )

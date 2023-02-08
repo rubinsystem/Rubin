@@ -256,3 +256,40 @@ E:/Rubin/launch.rb:4:in `<main>'
 2023.02.08.08.18.25: 81777: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
 2023.02.08.08.54.22: 73963: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
 2023.02.08.09.01.44: 54757: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.08.09.13.25: 11393: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.08.09.14.27: 80724: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.08.09.19.04: 64993: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.08.09.22.34: 58732: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.08.09.51.41: 24602: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.08.09.54.45: 30982: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.08.09.56.13: 19807: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.08.13.03.25: 56196: App encountered an exception.
+File exists @ dir_s_mkdir - E:/RubinSystem/Rubin/data/appdata/bilbodatabase/bank/default
+(eval):34:in `mkdir'
+(eval):34:in `initialize'
+(eval):245:in `new'
+(eval):245:in `run'
+E:/RubinSystem/Rubin/system/rubin.rb:647:in `eval'
+E:/RubinSystem/Rubin/system/rubin.rb:647:in `run'
+(eval):1:in `start'
+E:/RubinSystem/Rubin/system/rubin.rb:994:in `instance_eval'
+E:/RubinSystem/Rubin/system/rubin.rb:994:in `start'
+E:/RubinSystem/Rubin/system/rubin.rb:372:in `post_initialization'
+E:/RubinSystem/Rubin/system/rubin.rb:1023:in `<top (required)>'
+E:/RubinSystem/Rubin/launch.rb:4:in `load'
+E:/RubinSystem/Rubin/launch.rb:4:in `<main>'
+2023.02.08.13.04.36: 11505: App encountered an exception.
+File exists @ dir_s_mkdir - E:/RubinSystem/Rubin/data/appdata/bilbodatabase/bank/default
+(eval):34:in `mkdir'
+(eval):34:in `initialize'
+(eval):245:in `new'
+(eval):245:in `run'
+E:/RubinSystem/Rubin/system/rubin.rb:647:in `eval'
+E:/RubinSystem/Rubin/system/rubin.rb:647:in `run'
+(eval):1:in `start'
+E:/RubinSystem/Rubin/system/rubin.rb:994:in `instance_eval'
+E:/RubinSystem/Rubin/system/rubin.rb:994:in `start'
+E:/RubinSystem/Rubin/system/rubin.rb:372:in `post_initialization'
+E:/RubinSystem/Rubin/system/rubin.rb:1023:in `<top (required)>'
+E:/RubinSystem/Rubin/launch.rb:4:in `load'
+E:/RubinSystem/Rubin/launch.rb:4:in `<main>'
