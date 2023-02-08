@@ -8,7 +8,7 @@ class Host_Manager
   
   def call(cmd);  self.instance_eval("`"+cmd.to_s+"`");  return nil;  end
   
-  def launch(path) ##launch a rb, cmd, lnk file in new window
+  def launch(path) ## run file in current session
     if File.file?(path)
 	  begin
 	    Dir.chdir(path.to_s.split("/")[0..-2].join("/"))
@@ -21,12 +21,14 @@ class Host_Manager
 	end
   end
   
-  def launch_new(path) ## launch in current consol host
+  def launch_new(path) ## run file in new window
     if File.file?(path)
 	  begin
+	    cdir=Dir.getwd
 	    Dir.chdir(path.to_s.split("/")[0..-2].join("/"))
 	    n=path.to_s.split("/")[-1]
 		system("start "+n.to_s)
+		Dir.chdir(cdir)
 		return true
 	  rescue; return false
 	  end
@@ -52,7 +54,6 @@ class Host_Manager
   def procs
     str=`TASKLIST`
 	procs=[]
-  
     str.split("\n")[3..-1].each do |line|
 	  name=line[0..24].split("  ").join("")
       pid=line[26..33].split("  ").join("")	  
@@ -67,17 +68,16 @@ class Host_Manager
   
   def memory_used
     b=0
-	
 	self.procs.each do |p|
 	  b += p[-1].delete(" ,K").to_i
 	end
-
     return b.commas+" K"
   end
   
-  def memory_installed
-  end
+  #def memory_installed
+  #end
   
   def name;  return ENV["COMPUTERNAME"];  end
+  def user;  return ENV["USERNAME"];  end
   
 end

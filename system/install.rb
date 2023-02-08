@@ -1,9 +1,6 @@
 class Installation_Manager
   def initialize
-       
-	   
-	   
-	   
+    	   
 	@default_index_package=[["/rubin/system/daemond.rb",
 	  "/rubin/system/controller.rb",
 	  "/rubin/system/definitions.rb",
@@ -53,11 +50,6 @@ class Installation_Manager
 	end
 	return false
   end
-  
-  
-  
-  
-  
   
   def default_build_package
     a=self.default_index[0];  b=self.default_index[1]
@@ -208,36 +200,6 @@ class Installation_Manager
     return true
   
   end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
   
 
 end

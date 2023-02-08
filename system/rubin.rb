@@ -2,12 +2,9 @@ INSTALLATION_HEADER=["installed","E:/RubinSystem/Rubin","1.0.rev01","2023.2.1","
 ##First line will always be the install headder
 require 'bundler/inline'
 require 'open-uri'
-
-###############################################################################
-### BOOT
-
 puts "Checking system...";BOOT_INIT_TIME=Time.now
 boog_log=[]
+
 ##check workdir
 if Dir.getwd.to_s.downcase!=INSTALLATION_HEADER[1].to_s.downcase
   if File.exist?(INSTALLATION_HEADER[1])
@@ -32,7 +29,7 @@ if File.writable?($homedir)!= true
   ##try to run anyways
 end
 
-## make a temporary log to help if this boot gets rockey.
+## make a temporary log to help if this boot gets rockey.(one day)
 f=File.open($homedir+"/bootlog.log","w");f.write("\n"+Time.now.to_s+" : Boot initiated.\n"+boog_log.join("\n"));f.close
   
 ## Ensure system file exists.
@@ -45,27 +42,22 @@ end
 ## Boot criteria met, proceed
 msg=Time.now.to_s+" : BOOT SUCCESS."
 f=File.open($homedir+"/bootlog.log","a");f.write(msg+"\n");f.close
-
 puts "Initializing..."
 
-######################################################################
 ## Startup
-
-
-
 BOOTTIME=Time.now                     ##
 MAIN=self                             ##Somewhat global reference to this context.
 INSTANCE=rand(100000)
 
-$sysdir=$homedir+"/system"              ##Rubin system code and system files like cfg and cache.
-$appdir = $homedir+"/app"               ##Location of installed ruby applications.
-$classdir=$homedir+"/class"             ##Classes loaded with ruby, for redefinitions and adding features.
-$datadir=$homedir+"/data"               ##General purpose data directory.
-$appdatadir = $homedir+"/data/appdata"    ##For apps to store files and folders in.
-$cfgdir= $homedir+"/data/config"            ##For apps and user config data.
-$logdir = $homedir+"/data/logs"         ##General log directory. System and boot logs are here too.
-$userdir = $homedir+"/data/user"          ##General directory for apps to keep user data in.
-$bindir=$homedir+"/bin"                 ##For host executable files like interpreters and random exes.
+$sysdir=$homedir+"/system"              ## Rubin system code.
+$appdir = $homedir+"/app"               ## App installation files.
+$classdir=$homedir+"/class"             ## Classes loaded with ruby, for redefinitions and adding features.
+$datadir=$homedir+"/data"               ## General data directory.
+$appdatadir = $homedir+"/data/appdata"  ## Apps store data here.
+$cfgdir= $homedir+"/data/config"        ## General config directory.
+$logdir = $homedir+"/data/logs"         ## General log directory.
+$userdir = $homedir+"/data/user"        ##
+$bindir=$homedir+"/bin"                 ## For host executable files like interpreters and random exes.
 
 
 class RubinSystem
@@ -117,10 +109,7 @@ class RubinSystem
 	else;self.errorlog("Boot log was missing for this boot.")
 	end
 
-    
-	
-	
-	
+    	
 	## setup config data
 	@config_names=["LoadClasses","AutoStartApps","RubinStartOnBoot",
     "SystemShellAutoStart","DebugMode","DaemondDelay","ShowLogWrites",
@@ -136,11 +125,8 @@ class RubinSystem
     @config=@default_config
 	
 	
-	##check for stacking configs, if multi instance grab the correct numbered config file
-	## file can specify to delete or persist, program can over ride
-	
+	##check for preconfig.cfg first then config.cfg if it doesnt exist, preconfig can be stacked by adding a number to its name.
 	puts "Loading config data..."
-    ##check for preconfig or load default config	
     preconfig=false
 	f=Dir.entries(@cfgdir)[2..-1]
     if f.length>0
@@ -176,16 +162,6 @@ class RubinSystem
 	end
 
 
-
-
-
-
-
-
-
-
-
-
 	##load/install rubygems
 	if @config[11].length>0
 	  puts "Loading Ruby Gems..."
@@ -212,7 +188,6 @@ class RubinSystem
 	end  
 	 
 	##load definition if configured
-
     if @config[8].to_s=="true" and File.file?(@homedir+"/system/definitions.rb") == true
 	  
 	  begin

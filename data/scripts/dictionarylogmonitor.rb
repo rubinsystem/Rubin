@@ -1,6 +1,6 @@
 #file monitor
 
-path="E:/Rubin/data/logs/dictionary.log"
+path="E:/RubinSystem/Rubin/data/logs/dictionary.log"
 #until File.exist?(path) 
 #  print "File path:";path=gets.chomp.to_s;  if File.exist?(path);break;end
 #end

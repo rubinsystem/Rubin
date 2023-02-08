@@ -1,8 +1,5 @@
-#self.rb#5#;#6#;#9#;#9#;#4#;#5#;#6#;#7#;#9#;#6#;#4##
-## ossy7.20
-
-
-## all 256 ascii characters
+#self.rb#5#;#6#;#9#;#9#;#4#;#5#;#6#;#7#;#9#;#6#;#4### self.rb
+## CHARACTERS
 CHARS = [] ; c = 0 ; 256.times{ CHARS << c.chr.to_s ; c += 1 }
 ## every 8 bit binary number in cardinal order
 BINARY = [] ; c = 0 ; 256.times {  b = c.to_s(2) ; until b.to_s.length == 8 ; b = "0" + b.to_s ; end ; BINARY << b ; c += 1 }
@@ -17,18 +14,12 @@ SEASONS = ["spring","summer","autum","winter"]
 
 $CHARS = CHARS
 $BINARY = BINARY
-$HEX = $HEX
+$HEX = HEX
+$DAYS = DAYS
+$MONTHS = MONTHS
+$SEASONS = SEASONS
 
-TIMEZONES=[""]
-COLORS=[] ## color names(only primary colors)
-COLORP=[] ## color hex values
-UNITS=[] #(OF METRIC)
-UNITSAB=[] #above units abbreviations
-KEYWORDS=[] ## all default ruby syntax keywords plus ossy ones
-EXECPS=[] ## Exception types
-
-
-## some nifty methods for fooling around
+## logic operators by name
 def _and(a,b) ; if a == 1 and b == 1 ; return 1 ; else ; return 0 ; end ; end
 def _or(a,b) ; if a == 0 and b == 1 or a == 1 and b == 0 ; return 1 ; else ; return 0 ; end ; end
 def _not(a,b) ; if a == 0 and b == 0 ; return 1 ; else ; return 0 ; end ; end
@@ -39,13 +30,7 @@ def _xor(a,b) ; if a == 0 and b == 1 or a == 1 and b == 0 or a == 1 and b == 1 ;
 def rands(*int);if int[0].to_i>=2;t=int[0].to_i;else;t=1;end;s='';t.times{s='';s<<rand(255).chr};return s;end
 ## figure out what os the interpreter is on
 
-
-## determine if host is windows, regardless of what it tells the interpreter by actually looking at memory and files
 def windows_host?;if ENV["OS"] == "Windows_NT" and File.directory?("C:/");return true;end;end
-## why in gods name is this not a method or at least alias in Object
-def time;Time.now;end
-def date;;end
-def internet?;;end ## use open uri to attempt to connect to the internet
 
 def bench_mark(str,cont)
   s=Time.now
@@ -55,25 +40,9 @@ def bench_mark(str,cont)
 end
 alias :bm :bench_mark
 
-def eval_input *args
-  estr="{exit}";  lines=[]
-  if args.length==1;cont=args[0];  else;  cont=self;  end
-  loop do
-    line=gets.chomp
-	if line.to_s=="{exit}";  break
-	else;  lines << line.to_s
-	end
-  end
-  code=lines.join("\n")+"\n"
-  begin;  res = cont.instance_eval(code)
-  rescue => e;  res=e.to_s+"\n"+e.backtrace.join("\n")
-  end
-  return res
-end
-
 #####################################################################################################################################################################################
 ## this stuff is for objects that need their parent class to have a method or alias name, class or other objects
-## basically the stuff you define here is in the context of every class object hereafter
+## basically the stuff you define here is in the context of every class object
 Object.class_eval{
   def local_methods ; ms = self.methods ; mets = [] ; ms.each { |m| mets << m.to_s } ; rm = self.class.methods ; self.class.class.methods.each { |m| rm << m.to_s } ; nm = [] ; mets.each { |m| unless rm.include?(m.to_s) ; nm << m.to_s ; end } ; return nm ; end
   alias :m :methods ; alias :lm :local_methods
@@ -81,11 +50,23 @@ Object.class_eval{
   alias :ivs :instance_variable_set ;   alias :ivg :instance_variable_get   ##dont forget get/set constants and classvariables
   alias :iev :instance_eval ; alias :ev :eval
   def constants ; MAIN.class.constants ; end ; alias :cn :constants
-}
-#8#;#3#;#5#;#3#;#1#;#8#;#3#;#5#;#3#;#8#;#5##array.rb#5#;#6#;#9#;#9#;#4#;#5#;#6#;#7#;#9#;#6#;#4## Array redefinition
-# ossy7.20
-# We only add one method so far, a visual of .to_s
-
+  
+  def eval_input *args ##multiline console input terminated with {end}
+    lines=[]
+    if args.length==1;cont=args[0];  else;  cont=self;  end
+    loop do
+      line=gets.chomp
+	  if line.to_s=="{end}";  break
+	  else;  lines << line.to_s
+	  end
+    end
+    code=lines.join("\n")+"\n"
+    begin;  res = cont.instance_eval(code)
+    rescue => e;  res=e.to_s+"\n"+e.backtrace.join("\n")
+    end
+    return res
+  end
+}#8#;#3#;#5#;#3#;#1#;#8#;#3#;#5#;#3#;#8#;#5##array.rb#5#;#6#;#9#;#9#;#4#;#5#;#6#;#7#;#9#;#6#;#4###array.rb
 Array.class_eval{
 
   def delete_clones
@@ -116,61 +97,13 @@ Array.class_eval{
 	end
     "[" + items.join(", ").to_s + "]"
   end
-  ##alias :to_s :syntax  ##use this to hijack Array objects .to_s method
-}#8#;#3#;#5#;#3#;#1#;#8#;#3#;#5#;#3#;#8#;#5##bignum.rb#5#;#6#;#9#;#9#;#4#;#5#;#6#;#7#;#9#;#6#;#4## Bignum redefinition
-# ossy7.20
-# Integers that are also Bignum store their methods here rather than in Integer
 
-##BIGNUM MAY BE DEPRECIATED
-# Bignum.class_eval{
-  # def commas  ##format large numbers with commas
-    # str = ""
-    # s = self.to_s.split("").reverse ; i=0
-    # s.each do |nc|
-      # if i == 2
-        # i=0 ; str << nc.to_s + ","
-      # else
-	    # str << nc.to_s ; i+=1 
-	  # end 
-    # end
-    # if str.to_s[-1].chr.to_s == ","
-  	  # str = str.reverse.to_s.split("")[1..-1].join("").to_s
-    # else
-  	  # str = str.reverse.to_s
-    # end
-    # return str.to_s
-  # end 
-  # alias :com :commas  ## make this crap shorter to type and annoying for linux programmers cause im a dick
-#}
-#8#;#3#;#5#;#3#;#1#;#8#;#3#;#5#;#3#;#8#;#5##database.rb#5#;#6#;#9#;#9#;#4#;#5#;#6#;#7#;#9#;#6#;#4### BRING DEX.RB OVER HERE AND GENERALIZE IT FOR DICTIONARY BUILDING#8#;#3#;#5#;#3#;#1#;#8#;#3#;#5#;#3#;#8#;#5##dir.rb#5#;#6#;#9#;#9#;#4#;#5#;#6#;#7#;#9#;#6#;#4## Dir redefinition
-# ossy7.20
-##
-##  Dir.exist?(String)
-##  Dir.image(String)
-##  Dir.build_image(String,String)
-##  Dir.dir *args
-##  Dir.view *args
-##  Dir.map(String)
-##  Dir.size?(String)
-##  Dir.empty?(String)
-##  Dir.empty!(String)
-##  Dir.delete(String)  ##add this already
-##  Dir.search *args
-##  Dir.copy(String,String)
-##  Dir.move(String,String)
-##  Dir.rename(String,String)
-##  Dir.locate *args
-##  Dir.clones?       ##this works different than File.clones?
-##  
-##
-
-
+}#8#;#3#;#5#;#3#;#1#;#8#;#3#;#5#;#3#;#8#;#5##dir.rb#5#;#6#;#9#;#9#;#4#;#5#;#6#;#7#;#9#;#6#;#4##dir.rb
 Dir.instance_eval{
 
   def exist? inp ##i cant believe this isnt already a thing what if i just learned ruby and im like oh the exist? method is in Dir
     File.exist?(inp)
   end
- 
 
   def image(dir,dest,fname)
     
@@ -558,68 +491,19 @@ Dir.instance_eval{
 def dir *args ; Dir.dir *args ; end
 def viewdir *args ; puts Dir.view *args ; end
 alias :vd :viewdir
-#8#;#3#;#5#;#3#;#1#;#8#;#3#;#5#;#3#;#8#;#5##file.rb#5#;#6#;#9#;#9#;#4#;#5#;#6#;#7#;#9#;#6#;#4## File redefinition
-# ossy7.20
-
-# File.make(String path)
-# File.print(String path)
-# File.view(String path)
-# File.prepend(String path,String string)
-# File.append(String path, String string)
-# File.insert(String apth, Integer pos, String string)
-# File.read_line(String path, Integer/Range line)
-# File.write_line(String path, Integer line, String string)
-# File.insert_line(String path, Integer line, String string)
-# File.get_lines(String path)
-# File.delete_line(String path, Integer line)
-# File.include?(String path, String string)
-# File.empty?(String path)
-# File.empty!(String path)
-# File.size?(String path)
-# File.copy(String path, String newpath)
-# File.move(String path, String newpath)
-# File.dir?(String path)
-# File.file?(String path)
-# File.open(String path, String method)
-# File.read(String path)
-# File.write(String path, String string)
-# File.close
-
-
+#8#;#3#;#5#;#3#;#1#;#8#;#3#;#5#;#3#;#8#;#5##file.rb#5#;#6#;#9#;#9#;#4#;#5#;#6#;#7#;#9#;#6#;#4##file.rb
 File.instance_eval{
-  #def read(path) ; ; end ## ossy hasnt actually had a good reason to redefine read for a long time now this is about to be removed
-  #plus the problem is when you open a file its class has a read method as instance instead of global class so
- #figure that shit out before we reinclude read and write/print
-
+  
   def make(path);f=File.open(path,"wb");f.close;return true;end
 
-  def print(path)  ## print file to screen
-	unless File.file?(path)==false
-	  print File.read(path)
-	end
+  def prepend(p,s)
+    f=File.open(p,"r");d=f.read;f.close
+	f=File.open(p,"w");f.write(s+d);f.close
+	return s.length
   end
   
-  def view(path)
-    unless File.file?(path)==false
-      puts File.read(path)
-	end
-  end
-  
-  def prepend(path,string)
-    
-  end
-  
-  ## eliminates the need to open files in "a" mode but problematic for massive file.
-  def append *args # path, str
-    if File.file?(args[0].to_s)
-	  if args[1].to_s.length > 0
-	    fi = File.open(args[0].to_s,"r") ; cont = fi.read.to_s ; fi.close
-		fi = File.open(args[0].to_s,"w") ; fi.write(cont.to_s + args[1].to_s) ; fi.close
-	    return true
-	  else ; return "No input string to append to file."
-	  end
-	else ; return "No such file."
-	end
+  def append(p,s)
+    f=File.open(p,"a");f.write(s);f.close;return s.length
   end
   
   ## insert string at given character index position (0=first character)
@@ -635,6 +519,10 @@ File.instance_eval{
 	  end
 	else ; return "No such file."
 	end
+  end
+
+  def lines(p)
+    return File.read(p).split("\n")
   end
 
   # get a paticular line from a file in one call, line can be an integer or valid range of line index numbers
@@ -703,16 +591,8 @@ File.instance_eval{
 	  end
 	else ; return "No such file."
 	end
-  end
-  
-  ## just get all the lines in a file as an array
-  def get_line *args # path
-    if File.file?(args[0].to_s) ; fi = File.open(args[0].to_s,"r") ; cont = fi.read.to_s.split("\n") ; fi.close ; return cont
-	elsif File.directory?(args[0].to_s) ; return "Input string is a directory, File.get_lines only works on files."
-    else ; return "No such file."
-    end  
-  end
-  
+  end 
+
   ##works like String.include? but the String is a File instead
   def include? *args
     if File.file?(args[0].to_s)
@@ -744,10 +624,6 @@ File.instance_eval{
     else ; return "No such file."
     end    
   end
-  
-   #def size?(path)
-   #  f=File.open(path,"rb");size=f.read.to_s.split('').length;f.close;return size
-   #end
   
   ## copy utility
   def copy *args #path, newpath
@@ -783,36 +659,7 @@ File.instance_eval{
   end 
   
   alias :dir? :directory?
-}
-#8#;#3#;#5#;#3#;#1#;#8#;#3#;#5#;#3#;#8#;#5##fixnum.rb#5#;#6#;#9#;#9#;#4#;#5#;#6#;#7#;#9#;#6#;#4## Fixnum redefinition
-# ossy7.20
-# Integers that are fixnum store their methods here rather than Integer
-
-# Fixnum.class_eval{
-  # def commas  ##format large numbers with commas
-    # str = ""
-    # s = self.to_s.split("").reverse ; i=0
-    # s.each do |nc|
-      # if i == 2
-        # i=0 ; str << nc.to_s + ","
-      # else
-	    # str << nc.to_s ; i+=1 
-	  # end 
-    # end
-    # if str.to_s[-1].chr.to_s == ","
-  	  # str = str.reverse.to_s.split("")[1..-1].join("").to_s
-    # else
-	  # str = str.reverse.to_s
-    # end
-    # return str.to_s
-  # end
-  
-  # alias :com :commas ## make this crap shorter to type and annoying for linux programmers cause im a dick
-# }
-#8#;#3#;#5#;#3#;#1#;#8#;#3#;#5#;#3#;#8#;#5##integer.rb#5#;#6#;#9#;#9#;#4#;#5#;#6#;#7#;#9#;#6#;#4## Integer redefinition
-# ossy7.20
-# Here we add exponate, factors and prime? which ruby should already have a dozen such methods out of the box if you ask me
-
+}#8#;#3#;#5#;#3#;#1#;#8#;#3#;#5#;#3#;#8#;#5##integer.rb#5#;#6#;#9#;#9#;#4#;#5#;#6#;#7#;#9#;#6#;#4##integer.rb
 Integer.class_eval{
 
   def exponate ## manually search for the exponate form of the integer
@@ -899,10 +746,7 @@ Integer.class_eval{
   end
 
 }
-#8#;#3#;#5#;#3#;#1#;#8#;#3#;#5#;#3#;#8#;#5##log.rb#5#;#6#;#9#;#9#;#4#;#5#;#6#;#7#;#9#;#6#;#4## Log class definition
-# ossy 5
-# useful log object can link to an output file or just store entries internally
-
+#8#;#3#;#5#;#3#;#1#;#8#;#3#;#5#;#3#;#8#;#5##log.rb#5#;#6#;#9#;#9#;#4#;#5#;#6#;#7#;#9#;#6#;#4##log.rb
 class Log
   def initialize *args
     @log=[];@log_creation=Time.now
@@ -933,43 +777,34 @@ class Log
   alias :r :read
   alias :clr :clear
 end
-#8#;#3#;#5#;#3#;#1#;#8#;#3#;#5#;#3#;#8#;#5##password.rb#5#;#6#;#9#;#9#;#4#;#5#;#6#;#7#;#9#;#6#;#4## Password class definition
-# ossy 5
+#8#;#3#;#5#;#3#;#1#;#8#;#3#;#5#;#3#;#8#;#5##password.rb#5#;#6#;#9#;#9#;#4#;#5#;#6#;#7#;#9#;#6#;#4##password.rb
 # THIS IS NOT SECURE IN ANY WAY AND JUST TO OBFUSCATE strings from a user.
-
 class Password
   def initialize *args
     if args[0].is_a?(String) and args[0].to_s.length > 0 and args[0].to_s.delete("abcdefghijklmnopqrstuvwxyz0123456789").empty?
 	  @password = args[0].to_s.to_i(36).to_s(2) ## store the password in encoded form
 	else ; raise "Enter a string with only letters and numbers."
 	end
-  end
-  
+  end  
   ##encode some input and see if it matches the encoded password
-  def verify(password) ; if password.to_s.to_i(36).to_s(2) == @password ; return true ; else return false ; end ; end
-  
-  ## if you want the first level of security this class should deligate password changes
-  def change npass
-    @password = npass.to_s.to_i(36).to_s(2)
-  end
-  
-  # get/set encoded form of the password
-  def get ; return @password ; end
-  def set(pw) ; @password = pw ; end
+  def verify(password)
+    if password.to_s.to_i(36).to_s(2) == @password ; return true
+	else return false
+	end
+  end  
 end
-#8#;#3#;#5#;#3#;#1#;#8#;#3#;#5#;#3#;#8#;#5##shadow.rb#5#;#6#;#9#;#9#;#4#;#5#;#6#;#7#;#9#;#6#;#4##8#;#3#;#5#;#3#;#1#;#8#;#3#;#5#;#3#;#8#;#5##shell.rb#5#;#6#;#9#;#9#;#4#;#5#;#6#;#7#;#9#;#6#;#4## Shell class definition
-# ossy 5
-# For programs that want to work like irb
-
+#8#;#3#;#5#;#3#;#1#;#8#;#3#;#5#;#3#;#8#;#5##shell.rb#5#;#6#;#9#;#9#;#4#;#5#;#6#;#7#;#9#;#6#;#4###shell.rb
 class Shell
-  def initialize
-	@context=nil
+  def initialize *args
+	if args.length==0;@context=self
+	else;  @context=args[0]
+	end
 	@cid=nil
-	puts "Welcome to the shell..."
+    @running=nil
   end
   def start
-    @main_loop=true;@cid=0;@context=$main
-	while @main_loop   ########################
+    @running=true;@cid=0;@context=$main
+	while @running
 	  print @context.class.to_s+":"+@cid.to_s+"<< "
 	  @input = gets.chomp;res=nil
 	  if @input == "exit";@main_loop=false;res="Exiting shell."
@@ -984,13 +819,20 @@ class Shell
 	  end
 	  print @context.class.to_s+":"+@cid.to_s+">> "+res.to_s+"\n"
 	  @cid+=1
-	end##this is the end of the loop ##########
+	end
   end
   
-end#8#;#3#;#5#;#3#;#1#;#8#;#3#;#5#;#3#;#8#;#5##string.rb#5#;#6#;#9#;#9#;#4#;#5#;#6#;#7#;#9#;#6#;#4## String redefinition
-# ossy 7.20
-# Here we add many useful methods to string class
-
+  def stop
+    @running=0
+  end
+  
+  def context *args
+    if args.length==0;  return @context
+	else;  @context=args[0]
+	end
+  end
+  
+end#8#;#3#;#5#;#3#;#1#;#8#;#3#;#5#;#3#;#8#;#5##string.rb#5#;#6#;#9#;#9#;#4#;#5#;#6#;#7#;#9#;#6#;#4##string.rb
 String.class_eval{
   def shuffle ; return self.split('').shuffle.join('').to_s ; end
   alias :scramble :shuffle
@@ -1020,10 +862,7 @@ String.class_eval{
 	return str.to_s
   end 
 }
-#8#;#3#;#5#;#3#;#1#;#8#;#3#;#5#;#3#;#8#;#5##time.rb#5#;#6#;#9#;#9#;#4#;#5#;#6#;#7#;#9#;#6#;#4## Time redefinition
-# ossy7.20
-# Add some methods time needs
-
+#8#;#3#;#5#;#3#;#1#;#8#;#3#;#5#;#3#;#8#;#5##time.rb#5#;#6#;#9#;#9#;#4#;#5#;#6#;#7#;#9#;#6#;#4##time.rb
 Time.class.class.class_eval{
   def parse_seconds(s) ## take a number of second and compound it into a total of days hours minutes and seconds for timer displays and Time arithmetic
     s = s.to_s.to_f
@@ -1054,6 +893,3 @@ Time.class.class.class_eval{
     end
   end
 }
-#8#;#3#;#5#;#3#;#1#;#8#;#3#;#5#;#3#;#8#;#5##timer.rb#5#;#6#;#9#;#9#;#4#;#5#;#6#;#7#;#9#;#6#;#4## Timer class definition
-# ---
-# Undecided on new timer to stick with putting that off while i focus on more important bug fixes and development

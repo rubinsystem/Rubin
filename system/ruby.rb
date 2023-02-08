@@ -18,9 +18,6 @@ class Ruby_Manager
 
   def rubydir;return @rubydir;end
 
-
-
-
   def load_config
     if File.file?(@cfgpath)
 	  begin;d=File.read(@cfgpath);d=eval(d);@config=d
@@ -35,17 +32,12 @@ class Ruby_Manager
   
   end
 
-
-
-
-
   def insert_based_launcher
     ##copy host rubys irb files and insert a rubin launcher before them so rubin will run before irb
     ##return path to based launcher.
   end
 
-
-  def locate_host_ruby
+  def locate_host_ruby  ## recent ruby version update seems to have broken this
     drive=Dir.getwd.split("/")[0]+"/"
     located=false
 	##check host drive for ruby
@@ -53,13 +45,7 @@ class Ruby_Manager
 	list.each do |pf|
 	  if File.directory?(drive+pf)
         if pf.to_s.downcase[0..3]=="ruby"
-          if File.directory?(drive+pf+"/bin")
-		    if File.file?(drive+pf+"/bin/ruby.exe")
-		      
-			  located=drive+pf
-			  break
-			end
-		  end
+          located = drive+pf
 		end
       end	  
 	end

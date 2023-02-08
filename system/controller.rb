@@ -1,12 +1,9 @@
-##controller 1.0.01 1-22-23 rubin instance-network controller, thomasjslone
-# allows rubin to behave like a botnet
+##controller component
 
 class Controller          ## virtual network vis shared windows folders
-    
-    ## new idea, we do this to track component versions seperate from system versions.
-  
   def initialize
     
+	#right now internal config is ignored and system config is used.
 	@config_names=["Network_Directory","Network_Host","UserPriv"]
 	@default_config=["",""]
 	@config_data=@default_config
@@ -28,10 +25,6 @@ class Controller          ## virtual network vis shared windows folders
 
   end
 
-
-
-
-
   def cleaning?;  return @dir_cleaner_thread.alive?;  end
 
   def post_initialization  ## since we dont do any initializing in this file we dont call this here either, rubin system does after running this file
@@ -51,7 +44,6 @@ class Controller          ## virtual network vis shared windows folders
 	end
     return nil
   end
-  
   
   def start_main_binding
     if @binding != nil;  return false;  end
@@ -77,9 +69,6 @@ class Controller          ## virtual network vis shared windows folders
   def stop_main_binding
     @binding.stop;  @binding=nil; @state="stopped"
   end
-  
-  
-  
 
   def spawn_dir_cleaner
     if @dir_cleaner_thread!=nil;  return false;  end
@@ -124,12 +113,8 @@ class Controller          ## virtual network vis shared windows folders
     
   end
 
-  
-  
   def binding;  return @binding;  end
   
-  
-
   def members?
     e=Dir.entries(@network_directory)[2..-1]
 	if e.length == 0 ;  return []
@@ -198,8 +183,6 @@ class Controller          ## virtual network vis shared windows folders
 	else;  raise "Invalid inst passed."
 	end
   end
-
-
 
   def writelog(str)
     if str.to_s.length <= 0;  return false;  end

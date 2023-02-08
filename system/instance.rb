@@ -1,14 +1,9 @@
 class Instance
   def initialize
-    
-	
-	
-	
-	##check fileio binding for ones marked public
-    
+    @id=INSTANCE
   end
   
-  def get_local_ids
+  def locals?
     i=Dir.entries(SYSTEM.datadir+"/sys/instance")
 	if i.length>0
 	  l=[];fl=[]
@@ -33,28 +28,10 @@ class Instance
 	end
   end
   
-  
   def id ; return INSTANCE ; end
-  
   
   def pop
     SYSTEM.host.launch_new(SYSTEM.homedir+"/launch.rb")
   end
-  
-  
-  
-  
-
-  
-  
-  
-  class Group_Member_Host
-    
-  end
-
-  class Group_Member
-    
-  end  
-  
   
 end
