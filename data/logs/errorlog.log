@@ -1,0 +1,57 @@
+
+2023.01.28.07.43.42: 84584: System config load failed due to corruption.
+2023.01.28.07.43.42: 84584: Config file was corrupted. Restoring to default.
+2023.01.28.07.52.04: 75697: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.01.28.08.15.42: 18010: Restoring config to default
+2023.01.28.08.15.42: 18010: Definitions.rb produced an excption.
+uninitialized constant Bignum
+(eval):109:in `startup'
+E:/Rubin/system/rubin.rb:194:in `instance_eval'
+E:/Rubin/system/rubin.rb:194:in `startup'
+E:/Rubin/system/rubin.rb:1005:in `<top (required)>'
+E:/Rubin/launch.rb:4:in `load'
+E:/Rubin/launch.rb:4:in `<main>'
+2023.01.28.08.15.42: 18010: Component initialization failed: Dictionaryundefined method `dir?' for File:Class
+E:/Rubin/system/dictionary.rb:21:in `initialize'
+(eval):1:in `new'
+(eval):1:in `block in startup'
+E:/Rubin/system/rubin.rb:259:in `instance_eval'
+E:/Rubin/system/rubin.rb:259:in `block in startup'
+E:/Rubin/system/rubin.rb:255:in `each'
+E:/Rubin/system/rubin.rb:255:in `startup'
+E:/Rubin/system/rubin.rb:1005:in `<top (required)>'
+E:/Rubin/launch.rb:4:in `load'
+E:/Rubin/launch.rb:4:in `<main>'
+2023.01.28.08.15.42: 18010: Ruby Config was missing, it had be restored.
+2023.01.28.08.15.42: 18010: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.01.28.08.15.49: 31056: Definitions.rb produced an excption.
+uninitialized constant Bignum
+(eval):109:in `startup'
+E:/Rubin/system/rubin.rb:194:in `instance_eval'
+E:/Rubin/system/rubin.rb:194:in `startup'
+E:/Rubin/system/rubin.rb:1005:in `<top (required)>'
+E:/Rubin/launch.rb:4:in `load'
+E:/Rubin/launch.rb:4:in `<main>'
+2023.01.28.08.15.49: 31056: Component initialization failed: Dictionaryundefined method `dir?' for File:Class
+E:/Rubin/system/dictionary.rb:21:in `initialize'
+(eval):1:in `new'
+(eval):1:in `block in startup'
+E:/Rubin/system/rubin.rb:259:in `instance_eval'
+E:/Rubin/system/rubin.rb:259:in `block in startup'
+E:/Rubin/system/rubin.rb:255:in `each'
+E:/Rubin/system/rubin.rb:255:in `startup'
+E:/Rubin/system/rubin.rb:1005:in `<top (required)>'
+E:/Rubin/launch.rb:4:in `load'
+E:/Rubin/launch.rb:4:in `<main>'
+2023.01.28.08.15.49: 31056: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.01.28.08.18.34: 55307: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.01.28.08.18.46: 92565: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.01.28.08.19.45: 99602: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.01.28.08.20.21: 54862: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.01.28.08.22.17: 95557: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.01.28.08.22.52: 17859: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.01.28.08.24.20: 66418: Restoring config to default
+2023.01.28.08.24.20: 66418: Ruby Config was missing, it had be restored.
+2023.01.28.08.27.09: 66418: FUCK
+2023.01.28.08.27.42: 81417: FUCK
+2023.02.08.04.54.14: 7263: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').

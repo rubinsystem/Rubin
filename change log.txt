@@ -1,0 +1,9 @@
+v1.00 2.1.2023 - Released installer script,installer package, recovery* and online download added*****
+v1.00 1.29.2023 - no notes
+r1.0.001 1.29.2023 - divided old rubin application suite out and made the system fresh by cutting out a bunch of un-needed code, next version is releasable :D
+d0.2.0.9 1.29 - no notes
+d0.2.0.8 1.22.2023 - Replaced fileio with controller
+d0.2.0.7  1.6.2023 - Ideftified and addressed issues in the boot sequence for new installations.
+d0.2.0.7  1.1.2023 - Added standalone ruby installer for the rubin system.
+d0.2.0.6  1.6.2023 - no notes
+d0.2.0.6  1.6.2023 - no notes
