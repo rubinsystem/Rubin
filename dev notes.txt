@@ -1,20 +1,5 @@
 - network socket manager & rubin_network manager v 1.1 comming this summer
 
-- minor tweaks and imporvements to environment objects. 1.0--001rev 2/25
-
-- new config settings will soon be added...
-
-- version 1.0 dubbed feb 2023
-
--fileio component has been replaced with controller,
-
-- upon the last ruby update we have found evaluating definition files in system context by default no longer reaches to main and definition loads now need
-  to be context specified, ***a file can specify a context to use or one can be passed in the args for the SYSTEM.load_definition method.*** - jan 20 friday
-
-
-
-
-
 
 current bug list:
 

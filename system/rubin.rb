@@ -283,6 +283,7 @@ class RubinSystem
   end
 
   def components;return @components;  end
+  
   def dirs *args
     if args.length==1 and args[0].is_a?(String)
 	  dirname=args[0]
@@ -307,11 +308,10 @@ class RubinSystem
   def appdatadir;return @appdatadir;  end
   def logdir;return @logdir;  end
   def cfgdir;return @cfgdir;  end  
-  ##for some weird reason you cant call this method normally in rubin class scope unless it is defined here
-
- 
- 
- def install;return @installation_manager;  end
+  
+  ## Define method links to standard system components, the few we know to exist
+  
+  def install;return @installation_manager;  end
   def ruby; return @ruby_manager;  end
   def network;return @network_manager;  end
   def host;return @host_manager;  end
@@ -319,8 +319,9 @@ class RubinSystem
   def fileio ; return @fileio ; end
   def instance;return @instance;end
   def instance_id; return INSTANCE ; end
-
- 
+  def controller; return @controller;  end
+  alias :con :controller
+  alias :net :network
 
   def start_daemond   
     puts "Starting daemond..."
