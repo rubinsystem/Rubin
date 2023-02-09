@@ -5785,3 +5785,60 @@ E:/RubinSystem/Rubin/launch.rb:4:in `<main>'
 2023.02.09.01.46.01: 10071: System startup successfull.
 2023.02.09.01.46.01: 10071: Starting system shell.
 2023.02.09.01.46.16: 10071: Outdated instance file removed. (28938.dat ; 2023.02.09.01.45.58 )
+2023.02.09.01.55.44: 28345: System config was loaded.
+2023.02.09.01.55.45: 28345: Searching for classes to load.
+2023.02.09.01.55.45: 28345: Classes found: -1
+2023.02.09.01.55.45: 28345: Loaded class: page_info.rb
+2023.02.09.01.55.45: 28345: Loading system components: ["controller.rb", "daemond.rb", "dictionary.rb", "host.rb", "install.rb", "instance.rb", "network.rb", "rubin.rb", "ruby.rb", "definitions.rb"]
+2023.02.09.01.55.45: 28345: Initializing component: Controller
+2023.02.09.01.55.45: 28345: Initializing component: Dictionary
+2023.02.09.01.55.45: 28345: Initializing component: Host_Manager
+2023.02.09.01.55.45: 28345: Initializing component: Installation_Manager
+2023.02.09.01.55.45: 28345: Initializing component: Instance
+2023.02.09.01.55.45: 28345: Initializing component: Network_Manager
+2023.02.09.01.55.45: 28345: Initializing component: Ruby_Manager
+2023.02.09.01.55.45: 28345: Controller bound to dir:E:/RubinSystem/Rubin/data/fileio_public
+2023.02.09.01.55.45: 28345: Initialization finished.
+2023.02.09.01.55.45: 28345: Fileio deleted an old link: E:/RubinSystem/Rubin/data/fileio_public/fileio_link-28938.txt
+2023.02.09.01.55.45: 28345: Fileio deleted an old link: E:/RubinSystem/Rubin/data/fileio_public/fileio_link-10071.txt
+2023.02.09.01.55.45: 28345: System daemond has started.
+2023.02.09.01.55.45: 28345: System startup successfull.
+2023.02.09.01.55.45: 28345: Starting system shell.
+2023.02.09.01.55.45: 28345: Outdated instance file removed. (10071.dat ; 2023.02.09.01.53.43 )
+2023.02.09.01.58.36: 40519: System config was loaded.
+2023.02.09.01.58.36: 40519: Searching for classes to load.
+2023.02.09.01.58.36: 40519: Classes found: -1
+2023.02.09.01.58.36: 40519: Loaded class: page_info.rb
+2023.02.09.01.58.36: 40519: Loading system components: ["controller.rb", "daemond.rb", "dictionary.rb", "host.rb", "install.rb", "instance.rb", "network.rb", "rubin.rb", "ruby.rb", "definitions.rb"]
+2023.02.09.01.58.36: 40519: Initializing component: Controller
+2023.02.09.01.58.36: 40519: Initializing component: Dictionary
+2023.02.09.01.58.36: 40519: Initializing component: Host_Manager
+2023.02.09.01.58.36: 40519: Initializing component: Installation_Manager
+2023.02.09.01.58.36: 40519: Initializing component: Instance
+2023.02.09.01.58.36: 40519: Initializing component: Network_Manager
+2023.02.09.01.58.36: 40519: Initializing component: Ruby_Manager
+2023.02.09.01.58.36: 40519: Controller bound to dir:E:/RubinSystem/Rubin/data/fileio_public
+2023.02.09.01.58.36: 40519: Initialization finished.
+2023.02.09.01.58.36: 40519: Fileio deleted an old link: E:/RubinSystem/Rubin/data/fileio_public/fileio_link-28345.txt
+2023.02.09.01.58.36: 40519: System daemond has started.
+2023.02.09.01.58.36: 40519: System startup successfull.
+2023.02.09.01.58.36: 40519: Outdated instance file removed. (28345.dat ; 2023.02.09.01.55.55 )
+2023.02.09.01.58.36: 40519: Starting system shell.
+2023.02.09.02.04.46: 37959: System config was loaded.
+2023.02.09.02.04.46: 37959: Searching for classes to load.
+2023.02.09.02.04.46: 37959: Classes found: -1
+2023.02.09.02.04.46: 37959: Loaded class: page_info.rb
+2023.02.09.02.04.46: 37959: Loading system components: ["controller.rb", "daemond.rb", "dictionary.rb", "host.rb", "install.rb", "instance.rb", "network.rb", "rubin.rb", "ruby.rb", "definitions.rb"]
+2023.02.09.02.04.46: 37959: Initializing component: Controller
+2023.02.09.02.04.46: 37959: Initializing component: Dictionary
+2023.02.09.02.04.46: 37959: Initializing component: Host_Manager
+2023.02.09.02.04.46: 37959: Initializing component: Installation_Manager
+2023.02.09.02.04.46: 37959: Initializing component: Instance
+2023.02.09.02.04.46: 37959: Initializing component: Network_Manager
+2023.02.09.02.04.46: 37959: Initializing component: Ruby_Manager
+2023.02.09.02.04.46: 37959: Controller bound to dir:E:/RubinSystem/Rubin/data/fileio_public
+2023.02.09.02.04.46: 37959: Initialization finished.
+2023.02.09.02.04.46: 37959: Fileio deleted an old link: E:/RubinSystem/Rubin/data/fileio_public/fileio_link-40519.txt
+2023.02.09.02.04.46: 37959: System daemond has started.
+2023.02.09.02.04.46: 37959: Outdated instance file removed. (40519.dat ; 2023.02.09.01.58.41 )
+2023.02.09.02.04.46: 37959: Starting system shell.

@@ -311,17 +311,22 @@ class RubinSystem
   
   ## Define method links to standard system components, the few we know to exist
   
-  def install;return @installation_manager;  end
-  def ruby; return @ruby_manager;  end
-  def network;return @network_manager;  end
-  def host;return @host_manager;  end
-  def dic;return @dictionary;  end
-  def fileio ; return @fileio ; end
-  def instance;return @instance;end
-  def instance_id; return INSTANCE ; end
-  def controller; return @controller;  end
-  alias :con :controller
-  alias :net :network
+  
+  begin
+    def install;return @installation_manager;  end
+    def ruby; return @ruby_manager;  end
+    def network;return @network_manager;  end
+    def host;return @host_manager;  end
+    def dic;return @dictionary;  end
+    def fileio ; return @fileio ; end
+    def instance;return @instance;end
+    def instance_id; return INSTANCE ; end
+    def controller; return @controller;  end
+    alias :con :controller
+    alias :net :network
+  rescue; self.errorlog("Rubin was unable to define method links to all loaded components.")
+  end  
+	
 
   def start_daemond   
     puts "Starting daemond..."

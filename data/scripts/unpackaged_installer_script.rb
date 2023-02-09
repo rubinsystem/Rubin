@@ -95,7 +95,7 @@ old_header=eval(old_header.to_s)
 dat=dat.split("\n")[1..-1].join("\n")
 
 version=old_header[2].to_s ### for now itll be bugged and write the version as the one of the installing party not the packaged, fix later
-head=["installed",dir+"/rubin",version,Time.now.to_s,ENV["USER"].to_s,rand(99999999999999).to_s(36)]
+head=["installed",(dir+"/rubin").split("//").join("/"),version,Time.now.to_s,ENV["USER"].to_s,rand(99999999999999).to_s(36)]
 str="INSTALLATION_HEADER="+head.to_s
 
 	
