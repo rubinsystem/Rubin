@@ -1,5 +1,7 @@
 #
 
+if Dir.getwd.downcase.include?("rubin")==false;  raise "Not in a install directory: "+Dir.getwd;  end
+
 new_homedir = Dir.getwd.downcase.split("/rubin/")[0]+"/rubin"
 
 puts "New home dir? "+new_homedir.to_s
@@ -22,6 +24,10 @@ f=File.open(path,"w"); f.write(ndata);  f.close
 puts "Changing workdir to install location."
 
 Dir.chdir(new_homedir)
+
+puts "Launch? "+new_homedir.to_s
+inp=gets.chomp.downcase
+if inp[0]!="y"; exit ;  end
 
 puts "Preparing to launch."
 

@@ -6888,3 +6888,219 @@ E:/RubinSystem/Rubin/launch.rb:4:in `<main>'
 2023.02.10.08.12.50: 99884: Autoscript loaded: startup1.rb
 2023.02.10.08.12.50: 99884: Starting system shell.
 2023.02.10.08.13.00: 99884: Outdated instance file removed. (63861.dat ; 2023.02.10.08.12.43 )
+2023.02.10.09.22.56: 70470: System config was loaded.
+2023.02.10.09.22.56: 70470: Searching for classes to load.
+2023.02.10.09.22.56: 70470: Classes found: -1
+2023.02.10.09.22.56: 70470: Loaded class: page_info.rb
+2023.02.10.09.22.56: 70470: Loading system components: ["apps.rb", "controller.rb", "daemond.rb", "definitions.rb", "dictionary.rb", "host.rb", "install.rb", "instance.rb", "network.rb", "rubin.rb", "ruby.rb"]
+2023.02.10.09.22.56: 70470: Initializing component: Network_Manager
+2023.02.10.09.22.56: 70470: Initializing component: Instance
+2023.02.10.09.22.56: 70470: Initializing component: Ruby_Manager
+2023.02.10.09.22.56: 70470: Initializing component: App_Controller
+2023.02.10.09.22.56: 70470: Initializing component: Controller
+2023.02.10.09.22.56: 70470: Initializing component: Dictionary
+2023.02.10.09.22.56: 70470: Initializing component: Host_Manager
+2023.02.10.09.22.56: 70470: Initializing component: Installation_Manager
+2023.02.10.09.22.56: 70470: An error occured: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.10.09.22.56: 70470: Initialization finished.
+2023.02.10.09.22.56: 70470: System daemond has started.
+2023.02.10.09.22.56: 70470: System startup successfull.
+2023.02.10.09.22.56: 70470: Outdated instance file removed. (99884.dat ; 2023.02.10.08.13.10 )
+2023.02.10.09.22.56: 70470: Loading app file: bilbodatabase.rb
+2023.02.10.09.22.56: 70470: App load success: bilbodatabase
+2023.02.10.09.22.56: 70470: Loading app file: webspider.rb
+2023.02.10.09.22.56: 70470: App load success: webspider
+2023.02.10.09.22.56: 70470: Autoscript loaded: startup1.rb
+2023.02.10.09.22.56: 70470: Starting system shell.
+2023.02.10.10.07.12: 12148: System config was loaded.
+2023.02.10.10.07.12: 12148: Searching for classes to load.
+2023.02.10.10.07.12: 12148: Classes found: -1
+2023.02.10.10.07.12: 12148: Loaded class: page_info.rb
+2023.02.10.10.07.12: 12148: Loading system components: ["apps.rb", "controller.rb", "daemond.rb", "definitions.rb", "dictionary.rb", "host.rb", "install.rb", "instance.rb", "network.rb", "rubin.rb", "ruby.rb"]
+2023.02.10.10.07.12: 12148: Initializing component: App_Controller
+2023.02.10.10.07.13: 12148: Initializing component: Controller
+2023.02.10.10.07.13: 12148: Initializing component: Dictionary
+2023.02.10.10.07.13: 12148: Initializing component: Host_Manager
+2023.02.10.10.07.13: 12148: Initializing component: Installation_Manager
+2023.02.10.10.07.13: 12148: Initializing component: Instance
+2023.02.10.10.07.13: 12148: Initializing component: Network_Manager
+2023.02.10.10.07.13: 12148: Initializing component: Ruby_Manager
+2023.02.10.10.07.13: 12148: An error occured: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.10.10.07.13: 12148: Initialization finished.
+2023.02.10.10.07.13: 12148: System daemond has started.
+2023.02.10.10.07.13: 12148: System startup successfull.
+2023.02.10.10.07.13: 12148: Outdated instance file removed. (70470.dat ; 2023.02.10.09.23.41 )
+2023.02.10.10.07.13: 12148: Loading app file: bilbodatabase.rb
+2023.02.10.10.07.13: 12148: App load success: bilbodatabase
+2023.02.10.10.07.13: 12148: Loading app file: webspider.rb
+2023.02.10.10.07.13: 12148: App load success: webspider
+2023.02.10.10.07.13: 12148: Autoscript loaded: startup1.rb
+2023.02.10.10.07.13: 12148: Starting system shell.
+2023.02.10.10.07.18: 669: System config was loaded.
+2023.02.10.10.07.18: 669: Searching for classes to load.
+2023.02.10.10.07.18: 669: Classes found: -1
+2023.02.10.10.07.18: 669: Loaded class: page_info.rb
+2023.02.10.10.07.18: 669: Loading system components: ["apps.rb", "controller.rb", "daemond.rb", "definitions.rb", "dictionary.rb", "host.rb", "install.rb", "instance.rb", "network.rb", "rubin.rb", "ruby.rb"]
+2023.02.10.10.07.18: 669: Initializing component: Ruby_Manager
+2023.02.10.10.07.18: 669: Initializing component: Network_Manager
+2023.02.10.10.07.18: 669: Initializing component: Instance
+2023.02.10.10.07.18: 669: Initializing component: Controller
+2023.02.10.10.07.18: 669: Initializing component: App_Controller
+2023.02.10.10.07.18: 669: Initializing component: Dictionary
+2023.02.10.10.07.18: 669: Initializing component: Host_Manager
+2023.02.10.10.07.18: 669: Initializing component: Installation_Manager
+2023.02.10.10.07.18: 669: An error occured: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.10.10.07.19: 669: Initialization finished.
+2023.02.10.10.07.19: 669: System daemond has started.
+2023.02.10.10.07.19: 669: System startup successfull.
+2023.02.10.10.07.19: 669: Loading app file: bilbodatabase.rb
+2023.02.10.10.07.19: 669: App load success: bilbodatabase
+2023.02.10.10.07.19: 669: Loading app file: webspider.rb
+2023.02.10.10.07.19: 669: App load success: webspider
+2023.02.10.10.07.19: 669: Autoscript loaded: startup1.rb
+2023.02.10.10.07.19: 669: Starting system shell.
+2023.02.10.10.14.29: 89853: System config was loaded.
+2023.02.10.10.14.29: 89853: Searching for classes to load.
+2023.02.10.10.14.29: 89853: Classes found: -1
+2023.02.10.10.14.29: 89853: Loaded class: page_info.rb
+2023.02.10.10.14.29: 89853: Loading system components: ["apps.rb", "controller.rb", "daemond.rb", "definitions.rb", "dictionary.rb", "host.rb", "install.rb", "instance.rb", "network.rb", "rubin.rb", "ruby.rb"]
+2023.02.10.10.14.29: 89853: Initializing component: Ruby_Manager
+2023.02.10.10.14.29: 89853: Initializing component: Network_Manager
+2023.02.10.10.14.29: 89853: Initializing component: Instance
+2023.02.10.10.14.29: 89853: Initializing component: Controller
+2023.02.10.10.14.29: 89853: Initializing component: App_Controller
+2023.02.10.10.14.29: 89853: Initializing component: Dictionary
+2023.02.10.10.14.29: 89853: Initializing component: Host_Manager
+2023.02.10.10.14.29: 89853: Initializing component: Installation_Manager
+2023.02.10.10.14.29: 89853: An error occured: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.10.10.14.29: 89853: Initialization finished.
+2023.02.10.10.14.29: 89853: System daemond has started.
+2023.02.10.10.14.29: 89853: System startup successfull.
+2023.02.10.10.14.29: 89853: Outdated instance file removed. (12148.dat ; 2023.02.10.10.07.13 )
+2023.02.10.10.14.29: 89853: Loading app file: bilbodatabase.rb
+2023.02.10.10.14.29: 89853: Outdated instance file removed. (669.dat ; 2023.02.10.10.07.19 )
+2023.02.10.10.14.29: 89853: App load success: bilbodatabase
+2023.02.10.10.14.29: 89853: Loading app file: webspider.rb
+2023.02.10.10.14.29: 89853: App load success: webspider
+2023.02.10.10.14.29: 89853: Autoscript loaded: startup1.rb
+2023.02.10.10.14.29: 89853: Starting system shell.
+2023.02.10.10.17.41: 85150: System config was loaded.
+2023.02.10.10.17.41: 85150: Searching for classes to load.
+2023.02.10.10.17.41: 85150: Classes found: -1
+2023.02.10.10.17.41: 85150: Loaded class: page_info.rb
+2023.02.10.10.17.41: 85150: Loading system components: ["apps.rb", "controller.rb", "daemond.rb", "definitions.rb", "dictionary.rb", "host.rb", "install.rb", "instance.rb", "network.rb", "rubin.rb", "ruby.rb"]
+2023.02.10.10.17.41: 85150: Initializing component: Ruby_Manager
+2023.02.10.10.17.41: 85150: Initializing component: Network_Manager
+2023.02.10.10.17.41: 85150: Initializing component: Instance
+2023.02.10.10.17.41: 85150: Initializing component: Controller
+2023.02.10.10.17.41: 85150: Initializing component: App_Controller
+2023.02.10.10.17.41: 85150: Initializing component: Dictionary
+2023.02.10.10.17.41: 85150: Initializing component: Host_Manager
+2023.02.10.10.17.41: 85150: Initializing component: Installation_Manager
+2023.02.10.10.17.41: 85150: An error occured: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.10.10.17.41: 85150: Initialization finished.
+2023.02.10.10.17.41: 85150: System daemond has started.
+2023.02.10.10.17.41: 85150: System startup successfull.
+2023.02.10.10.17.41: 85150: Loading app file: bilbodatabase.rb
+2023.02.10.10.17.41: 85150: App load success: bilbodatabase
+2023.02.10.10.17.41: 85150: Outdated instance file removed. (89853.dat ; 2023.02.10.10.14.34 )
+2023.02.10.10.17.41: 85150: Loading app file: webspider.rb
+2023.02.10.10.17.41: 85150: App load success: webspider
+2023.02.10.10.17.41: 85150: Autoscript loaded: startup1.rb
+2023.02.10.10.17.41: 85150: Starting system shell.
+2023.02.10.10.18.02: 97064: System config was loaded.
+2023.02.10.10.18.02: 97064: Searching for classes to load.
+2023.02.10.10.18.02: 97064: Classes found: -1
+2023.02.10.10.18.02: 97064: Loaded class: page_info.rb
+2023.02.10.10.18.02: 97064: Loading system components: ["apps.rb", "controller.rb", "daemond.rb", "definitions.rb", "dictionary.rb", "host.rb", "install.rb", "instance.rb", "network.rb", "rubin.rb", "ruby.rb"]
+2023.02.10.10.18.02: 97064: Initializing component: Ruby_Manager
+2023.02.10.10.18.02: 97064: Initializing component: Network_Manager
+2023.02.10.10.18.02: 97064: Initializing component: Instance
+2023.02.10.10.18.02: 97064: Initializing component: Controller
+2023.02.10.10.18.02: 97064: Initializing component: App_Controller
+2023.02.10.10.18.02: 97064: Initializing component: Dictionary
+2023.02.10.10.18.02: 97064: Initializing component: Host_Manager
+2023.02.10.10.18.02: 97064: Initializing component: Installation_Manager
+2023.02.10.10.18.02: 97064: An error occured: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.10.10.18.02: 97064: Initialization finished.
+2023.02.10.10.18.02: 97064: System daemond has started.
+2023.02.10.10.18.02: 97064: System startup successfull.
+2023.02.10.10.18.02: 97064: Loading app file: bilbodatabase.rb
+2023.02.10.10.18.02: 97064: App load success: bilbodatabase
+2023.02.10.10.18.02: 97064: Loading app file: webspider.rb
+2023.02.10.10.18.02: 97064: App load success: webspider
+2023.02.10.10.18.02: 97064: Autoscript loaded: startup1.rb
+2023.02.10.10.18.02: 97064: Starting system shell.
+2023.02.10.10.18.39: 97072: System config was loaded.
+2023.02.10.10.18.39: 97072: Searching for classes to load.
+2023.02.10.10.18.39: 97072: Classes found: -1
+2023.02.10.10.18.39: 97072: Loaded class: page_info.rb
+2023.02.10.10.18.39: 97072: Loading system components: ["apps.rb", "controller.rb", "daemond.rb", "definitions.rb", "dictionary.rb", "host.rb", "install.rb", "instance.rb", "network.rb", "rubin.rb", "ruby.rb"]
+2023.02.10.10.18.39: 97072: Initializing component: Ruby_Manager
+2023.02.10.10.18.39: 97072: Initializing component: Network_Manager
+2023.02.10.10.18.39: 97072: Initializing component: Instance
+2023.02.10.10.18.39: 97072: Initializing component: Controller
+2023.02.10.10.18.39: 97072: Initializing component: App_Controller
+2023.02.10.10.18.39: 97072: Initializing component: Dictionary
+2023.02.10.10.18.39: 97072: Initializing component: Host_Manager
+2023.02.10.10.18.39: 97072: Initializing component: Installation_Manager
+2023.02.10.10.18.39: 97072: An error occured: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.10.10.18.39: 97072: Initialization finished.
+2023.02.10.10.18.39: 97072: System daemond has started.
+2023.02.10.10.18.39: 97072: System startup successfull.
+2023.02.10.10.18.39: 97072: Outdated instance file removed. (85150.dat ; 2023.02.10.10.18.01 )
+2023.02.10.10.18.39: 97072: Outdated instance file removed. (97064.dat ; 2023.02.10.10.18.02 )
+2023.02.10.10.18.39: 97072: Loading app file: bilbodatabase.rb
+2023.02.10.10.18.39: 97072: App load success: bilbodatabase
+2023.02.10.10.18.39: 97072: Loading app file: webspider.rb
+2023.02.10.10.18.39: 97072: App load success: webspider
+2023.02.10.10.18.39: 97072: Autoscript loaded: startup1.rb
+2023.02.10.10.18.39: 97072: Starting system shell.
+2023.02.10.10.20.06: 82847: System config was loaded.
+2023.02.10.10.20.06: 82847: Searching for classes to load.
+2023.02.10.10.20.06: 82847: Classes found: -1
+2023.02.10.10.20.06: 82847: Loaded class: page_info.rb
+2023.02.10.10.20.06: 82847: Loading system components: ["apps.rb", "controller.rb", "daemond.rb", "definitions.rb", "dictionary.rb", "host.rb", "install.rb", "instance.rb", "network.rb", "rubin.rb", "ruby.rb"]
+2023.02.10.10.20.06: 82847: Initializing component: Ruby_Manager
+2023.02.10.10.20.06: 82847: Initializing component: Network_Manager
+2023.02.10.10.20.06: 82847: Initializing component: Instance
+2023.02.10.10.20.06: 82847: Initializing component: Controller
+2023.02.10.10.20.06: 82847: Initializing component: App_Controller
+2023.02.10.10.20.06: 82847: Initializing component: Dictionary
+2023.02.10.10.20.06: 82847: Initializing component: Host_Manager
+2023.02.10.10.20.06: 82847: Initializing component: Installation_Manager
+2023.02.10.10.20.06: 82847: An error occured: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.10.10.20.06: 82847: Initialization finished.
+2023.02.10.10.20.06: 82847: System daemond has started.
+2023.02.10.10.20.06: 82847: System startup successfull.
+2023.02.10.10.20.06: 82847: Loading app file: bilbodatabase.rb
+2023.02.10.10.20.06: 82847: App load success: bilbodatabase
+2023.02.10.10.20.06: 82847: Outdated instance file removed. (97072.dat ; 2023.02.10.10.18.44 )
+2023.02.10.10.20.06: 82847: Loading app file: webspider.rb
+2023.02.10.10.20.06: 82847: App load success: webspider
+2023.02.10.10.20.06: 82847: Autoscript loaded: startup1.rb
+2023.02.10.10.20.06: 82847: Starting system shell.
+2023.02.10.10.21.11: 70470: System config was loaded.
+2023.02.10.10.21.11: 70470: Searching for classes to load.
+2023.02.10.10.21.11: 70470: Classes found: -1
+2023.02.10.10.21.11: 70470: Loaded class: page_info.rb
+2023.02.10.10.21.11: 70470: Loading system components: ["apps.rb", "controller.rb", "daemond.rb", "definitions.rb", "dictionary.rb", "host.rb", "install.rb", "instance.rb", "network.rb", "rubin.rb", "ruby.rb"]
+2023.02.10.10.21.11: 70470: Initializing component: Ruby_Manager
+2023.02.10.10.21.11: 70470: Initializing component: Network_Manager
+2023.02.10.10.21.11: 70470: Initializing component: Instance
+2023.02.10.10.21.11: 70470: Initializing component: Controller
+2023.02.10.10.21.11: 70470: Initializing component: App_Controller
+2023.02.10.10.21.11: 70470: Initializing component: Dictionary
+2023.02.10.10.21.11: 70470: Initializing component: Host_Manager
+2023.02.10.10.21.11: 70470: Initializing component: Installation_Manager
+2023.02.10.10.21.11: 70470: An error occured: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.10.10.21.11: 70470: Initialization finished.
+2023.02.10.10.21.11: 70470: System daemond has started.
+2023.02.10.10.21.11: 70470: System startup successfull.
+2023.02.10.10.21.11: 70470: Outdated instance file removed. (82847.dat ; 2023.02.10.10.20.26 )
+2023.02.10.10.21.11: 70470: Loading app file: bilbodatabase.rb
+2023.02.10.10.21.11: 70470: App load success: bilbodatabase
+2023.02.10.10.21.11: 70470: Loading app file: webspider.rb
+2023.02.10.10.21.12: 70470: App load success: webspider
+2023.02.10.10.21.12: 70470: Autoscript loaded: startup1.rb
+2023.02.10.10.21.12: 70470: Starting system shell.

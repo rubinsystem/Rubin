@@ -1,4 +1,4 @@
-INSTALLATION_HEADER=["installed","E:/RubinSystem/Rubin","1.0.rev01","2023.2.1","thoma","D94JG8EH4"]#INSTALLATION_HEADER_END
+INSTALLATION_HEADER=["installed", "e:/rubin", "1.0.rev01", "2023.2.1", "thoma", "D94JG8EH4"]
 ##First line will always be the install headder
 
 #in later versions we will control this.
@@ -7,34 +7,55 @@ require 'open-uri'
 require 'net/http'
 
 puts "Checking system...";BOOT_INIT_TIME=Time.now
-boog_log=[]
+boot_log=[]
 
 ##check workdir
 if Dir.getwd.to_s.downcase!=INSTALLATION_HEADER[1].to_s.downcase
+  boot_log << "Workdir is not install dir: "+INSTALLATION_HEADER[1].to_s 
   if File.exist?(INSTALLATION_HEADER[1])
-    msg=Time.now.to_s+" : ERROR : Work directory is not installation directory. It had to be changed."  
-    boog_log << msg
-    $homedir=INSTALLATION_HEADER[1]
-	Dir.chdir($homedir)	## this is mostly optional
-	puts msg.to_s
-  else 
-	msg=Time.now.to_s+" : ERROR : CRITICAL : Installation not found!"
-    boog_log << msg
-	puts boog_log.join("\n")
-	exit  ## ABORT BOOT installation not found
+    ##external launch, chdir to install
+	Dir.chdir(INSTALLATION_HEADER)
+	$homedir=Dir.getwd	
+  else
+    ## the entire install directory has been unexpectedly moved 
+	if File.file?(Dir.getwd+"/system/rubin.rb")
+	  ##we have located the system core and we can update the installation header
+	  ##to this new install directory location.
+	    new_homedir = Dir.getwd.downcase.split("/rubin")[0]+"/rubin"
+        path=new_homedir+"/system/rubin.rb"
+        f=File.open(path,"r");data=f.read;f.close
+        header=data.split("\n")[0]
+        header=header.split("=")[-1]
+        header = self.instance_eval(header)
+        header[1]=new_homedir
+        header="INSTALLATION_HEADER="+header.to_s
+        ndata=header.to_s+"\n"+data.split("\n")[1..-1].join("\n")
+        f=File.open(path,"w"); f.write(ndata);  f.close
+        Dir.chdir(new_homedir)
+		$homedir=new_homedir
+		##now we gotta restart
+		puts "System Install dir was recently moved and info had to be updated before startup."
+		puts "Restarting in 3 seconds."
+		sleep 3.0
+		system("start launch.rb")
+		sleep 0.2
+		exit
+	else
+	  puts "BOOT CANNOT CONTINUE, INSTALLATION NOT FOUND";  sleep 3.0;  raise "BOOT FAILED"#exit
+	end
   end  
 else;$homedir=Dir.getwd
 end
 
 if File.writable?($homedir)!= true
   msg=Time.now.to_s+" : ERROR : CRITICAL : Installation directory is not writable per host!"
-  boog_log << msg
-  puts boog_log.join("\n")
+  boot_log << msg
+  puts boot_log.join("\n")
   ##try to run anyways
 end
 
 ## make a temporary log to help if this boot gets rockey.(one day)
-f=File.open($homedir+"/bootlog.log","w");f.write("\n"+Time.now.to_s+" : Boot initiated.\n"+boog_log.join("\n"));f.close
+f=File.open($homedir+"/bootlog.log","w");f.write("\n"+Time.now.to_s+" : Boot initiated.\n"+boot_log.join("\n"));f.close
   
 ## Ensure system file exists.
 if File.exist?(INSTALLATION_HEADER[1]+"/system/rubin.rb")==false
@@ -589,7 +610,7 @@ class RubinSystem
 		  self.errorlog("Loading class file failed: "+i+"\n"+e.to_s+"\n"+e.backtrace.join("\n").to_s)
 	    end
       end
-	  return (n.length-2)
+	  return (n.length)
 	else
 	  self.writelog("Attempted to load system classes but there were none.")
 	  return 0

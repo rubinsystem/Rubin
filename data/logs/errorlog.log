@@ -345,3 +345,12 @@ E:/RubinSystem/Rubin/system/rubin.rb:360:in `post_initialization'
 E:/RubinSystem/Rubin/system/rubin.rb:1033:in `<top (required)>'
 E:/RubinSystem/Rubin/launch.rb:4:in `load'
 E:/RubinSystem/Rubin/launch.rb:4:in `<main>'
+2023.02.10.09.22.56: 70470: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.10.10.07.13: 12148: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.10.10.07.18: 669: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.10.10.14.29: 89853: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.10.10.17.41: 85150: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.10.10.18.02: 97064: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.10.10.18.39: 97072: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.10.10.20.06: 82847: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.10.10.21.11: 70470: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
