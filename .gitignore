@@ -3,3 +3,5 @@ data/logs/dictionary.log
 data/logs/bootlog.log
 *.dat
 *.dat
+*.log
+*.log
