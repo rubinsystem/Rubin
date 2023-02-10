@@ -4,3 +4,4 @@
 current bug list:
 
 1. ShowLogWrites config setting doesnt do anything.
+2. Controller sometimes crashes when ctrlnetdir isnt set, also there may be some unrescued file writes causing rare errors.

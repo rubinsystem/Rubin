@@ -53,14 +53,29 @@ class BilboDatabase
 	end
   end 
   
-  def add(data)
+  def add_new_page(url)
     if data.to_s=="";return false; end
 	if @bank.length<@bank_size_limit.to_i
 	else; self.load_open_bank
 	end
-	page=Page_Info.new(data)
+	page=Page_Info.new("new",url.to_s)
 	@bank<<page
 	return @bank.length-1
+  end
+  
+  def insert_page(page)
+    if page.class.to_s != "Page_Info";  raise "insert_page requires Page_Info object as arguement.";  end
+    if @bank.length<@bank_size_limit.to_i
+	else;  self.load_open_bank
+	end
+    @bank << page
+    return @bank.length-1
+  end
+  
+  def delete_page(url)
+    
+  
+  
   end
   
 
@@ -173,4 +188,4 @@ end
 
 @app=BilboDatabase.new
 
-$b=@app
+$bilbo=@app
