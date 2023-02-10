@@ -1,0 +1,96 @@
+MAIN                         points to main context
+SYSTEM                       points to system
+ 
+$CHARS / CHARS               useful
+$HEX / HEX
+$BINARY / BINARY
+
+SYSTEM._and                  some logic methods ** right now definitions do not touch main, that might be difficult to do for both
+SYSTEM._or
+SYSTEM._nand
+SYSTEM._xor
+SYSTEM._nor
+
+MAIN.bench_mark
+
+SYSTEM.dir                 return work dir, sets workdir if passed an arg, args can be local file names instead of full paths.MAIN.vd 
+Dir.viewdir                prints the current directory to the screen, can take a path as an arg.
+SYSTEM.vd                  an alias for Dir.view
+
+Time.stamp                         Returns a time stamp, or takes a timestamp and returns a Time class for it, and visa-versa.
+Time.parse_seconds                 Gets an array of timmer elements [hrs, mins, secs] from a gt integer of seconds.
+
+MAIN.class.Password                an insecure way to store temporary passwords.
+
+SYSTEM.dirs                     returns a list of system dirs, returns the path if the dir name is passed as an arg
+SYSTEM.homedir
+SYSTEM.classdir
+SYSTEM.sysdir
+SYSTEM.datadir
+SYSTEM.appdir
+SYSTEM.appdatadir
+SYSTEM.cfgdir
+SYSTEM.logdir              
+SYSTEM.apps?                 get a list of apps installed.
+SYSTEM.scripts?              get a list of runnable scripts.
+SYSTEM.run                   run an app
+SYSTEM.runs                  run a script file
+SYSTEM.config                return an array of cfg names and values, pass a name or index number to
+                             get a value, path that followed by a value to set it.
+SYSTEM.load_config           loads default config, can take an arg of config file path
+SYSTEM.save_config           saves default cfg file, pass a filepath with name to save cfg as.
+SYSTEM.config? / SYSTEM.show_config  returns a list of config names and values that is more readable.
+SYSTEM.load_classes          load the classdir, can take an arg for alternate load dir
+SYSTEM.import_classes        pass path to a definition file to dissassemble it into individual files.
+SYSTEM.export_classes        pass a oath and name of file to export classdir files to.
+
+SYSTEM.ruby                  ruby component, manages interpreter
+SYSTEM.install               install component
+SYSTEM.host                  host component
+SYSTEM.network               network component
+SYSTEM.con                   controller component
+SYSTEM.dic                   a dicitonary
+SYSTEM.apps                  App controller.
+
+SYSTEM.install.dir                                 See the install location.
+SYSTEM.install.default_index                       Returns an array used for creating installation packages. This will return a basic version of your installation.
+SYSTEM.install.version                             See rubin version number.
+SYSTEM.install.default_build_package               Generate a installpackage.txt in /Rubin/data/backups.
+SYSTEM.install.id                                  See installation finger print.
+SYSTEM.install.install_package(package,dest)       Installs a package.
+SYSTEM.install.build_package                       Builds a package from a custom input array of files and directories.
+SYSTEM.install.verify_installation_files           Checks a directory to see if it apears bootable.
+SYSTEM.install.date                                Returns install date.
+
+SYSTEM.host.memory_used                            Get ram used.
+SYSTEM.host.memory_installed                       **not added yet
+SYSTEM.host.call                                   Run a cmd command
+SYSTEM.host.launch                                 Run a cmd command in this session
+SYSTEM.host.launch_new                             Create a new session to run cmd command.
+SYSTEM.host.drives                                 Get mounted drives.
+SYSTEM.host.host_drive                             Get host drive.
+SYSTEM.host.procs                                  Get host processes.
+SYSTEM.host.get_host_identifier                    Get a string of info about the host hardware and software
+
+SYSTEM.instance.pop                                Create a new window with a new instance.
+SYSTEM.instance.id                                 Get the instance id.
+SYSTEM.instance.get_local_ids                      Get the ids of all instances that appear as running from the installation.
+
+SYSTEM.ruby.rubydir                                Get the hosts ruby installation directory.
+SYSTEM.ruby.locate_host_ruby                       This has to be run if the ruby installation moves or is updated.
+
+SYSTEM.controller / SYSTEM.con                     The controller component allows instances to be controlled by network directories.
+
+SYSTEM.con.state                                   Controller state
+SYSTEM.con.dir                                     Controller network directory. Pass an argument to set
+SYSTEM.con.cleaning? ***                           Check if this controller is cleaning the shared network direcotry.
+SYSTEM.con.write("1234","puts 'hello'")            Write script to a controller.
+SYSTEM.con.read("1234")                            Read output from a controller.
+SYSTEM.con.request("1234","puts 'hello'")          Write then wait and read output from controller.
+SYSTEM.con.input("1234")                           Multi-line gets and sends the string to the controller
+SYSTEM.con.writelog                                Write to the individual controllers log, all controllers logs are in the network directory
+SYSTEM.con.log                                     Get controllers log.
+**SYSTEM.con.majorlog                              All controller logs also write here.                                   
+**SYSTEM.con.majorwritelog
+SYSTEM.con.binding                                 Get the eval binding object in controller.
+SYSTEM.con.members?                                Get all the controllers bound to the current network directory.
