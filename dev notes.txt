@@ -1,3 +1,7 @@
+
+- App Controller is now a thing, now that we are demoing multiple apps that interact this component has become semi necessary
+
+
 - network socket manager & rubin_network manager v 1.1 comming this summer
 
 

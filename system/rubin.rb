@@ -1,7 +1,11 @@
 INSTALLATION_HEADER=["installed","E:/RubinSystem/Rubin","1.0.rev01","2023.2.1","thoma","D94JG8EH4"]#INSTALLATION_HEADER_END
 ##First line will always be the install headder
+
+#in later versions we will control this.
 require 'bundler/inline'
 require 'open-uri'
+require 'net/http'
+
 puts "Checking system...";BOOT_INIT_TIME=Time.now
 boog_log=[]
 
@@ -322,6 +326,7 @@ class RubinSystem
     def instance;return @instance;end
     def instance_id; return INSTANCE ; end
     def controller; return @controller;  end
+	def apps;  return @app_controller;  end
     alias :con :controller
     alias :net :network
   rescue; self.errorlog("Rubin was unable to define method links to all loaded components.")
