@@ -1,3 +1,12 @@
+Object.local_methods        Gets the methods defined only in the objects class and not methods from its parent or scope.
+Object.lm                   Alias for the above.
+Object.gv                   Alias for global variables
+Object.ivs                  Alias for instance_variables
+Object.ivg                  Alias for instance_variable_get
+Object.ivs                  Alias for instance_variable_set
+Object.iev                  Alias for instance_eval
+Object.cons                 Alias for constants
+
 
 MAIN                         points to main context
 SYSTEM                       points to system
