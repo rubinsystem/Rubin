@@ -2,6 +2,7 @@ class Installation_Manager
   def initialize
     	   
 	@default_index_package=[["/rubin/system/daemond.rb",
+	  "/rubin/system/apps.rb",
 	  "/rubin/system/controller.rb",
 	  "/rubin/system/definitions.rb",
 	  "/rubin/system/dictionary.rb",
@@ -196,14 +197,29 @@ class Installation_Manager
     version=old_header[2].to_s ### for now itll be bugged and write the version as the one of the installing party not the packaged, fix later
     head=["installed",dir+"/rubin",version,Time.now.to_s,ENV["USER"].to_s,rand(99999999999999).to_s(36)]
     str="INSTALLATION_HEADER="+head.to_s
-
 	
-	ndat=str+"\n"+dat
-	f=File.open(p,"w");  f.write(ndat);  f.close
-
-    return true
-  
+    ndat=str+"\n"+dat
+    f=File.open(p,"w");  f.write(ndat);  f.close
+    return true 
   end
+ 
+ 
   
-
+ 
+   
+   ## Internet enabled methods
+  
+   def pull_file(url) ## pulls raw files from github
+   
+   end
+   
+   def verify_file(path,url)  ## checks a file against its github counterpart, true if same.
+     
+   end
+ 
+   def  check_latest_version   ## checks the rubin website for the latest version number
+   
+   end
+ 
+ 
 end
