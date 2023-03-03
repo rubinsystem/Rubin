@@ -871,18 +871,20 @@ Time.class.class.class_eval{
 	elsif s.to_f < 3600.0 and s.to_f >= 60.0
 	  minutes = s.to_f / 60.0
 	  sec = ("." + minutes.to_s.split(".")[-1].to_s).to_f * 60  ## the period is because the expression is converting integers to strings to floats
-	  [0,minutes.to_i, sec.round]
+	  [0,minutes.to_i, sec.round]    ## WHY DO WE ROUND ONLY HERE
 	elsif s.to_f < 86400.0 and s.to_f >= 3600.0
 	  hours = s.to_f / 60.0 / 60.0
 	  minutes = ("." + hours.to_s.split(".")[-1].to_s).to_f * 60
 	  sec = ("." + minutes.to_s.split(".")[-1].to_s).to_f * 60
 	  [hours.to_i, minutes.to_i ,sec.to_i]
-    elsif s.to_f >= 86400.0
-	  days = s.to_f / 60.0 / 60.0 / 24.0
+    elsif s.to_f >= 86400.0  ## has issues, try 86461 (1 day one minute and one decond)
+	
+      days = s.to_f / 60.0 / 60.0 / 24.0                                                      ## dont forget to remove the decimal!!
 	  hours = ("."+ days.to_s.split(".")[-1]).to_f * 24
-	  minutes = ("." + hours.to_s.split(".")[-1]).to_s.to_i*60
-	  sec = (s/60.0).to_s.split(".")[-1].to_i*60
+	  minutes = ("." + hours.to_s.split(".")[-1]).to_s.to_i*60       ## these two seem to not work
+	  sec = (s/60.0).to_s.split(".")[-1].to_i*60                                 ##
 	  [days,hours.to_i,minutes,sec]
+    
 	end
   end  
 

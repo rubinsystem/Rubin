@@ -376,3 +376,66 @@ E:/RubinSystem/Rubin/launch.rb:4:in `<main>'
 2023.02.10.17.30.05: 32202: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
 2023.02.10.17.44.47: 52043: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
 2023.02.11.01.40.58: 49536: Controller network directory was invalid, you can reconfigure it using SYSTEM.config(7,'path').
+2023.02.18.15.18.26: 90475: App encountered an exception.
+Webspider cannot see BilboDatabase, startup cannot proceed.
+(eval):5:in `initialize'
+(eval):243:in `new'
+(eval):243:in `run'
+E:/Rubin/system/rubin.rb:699:in `eval'
+E:/Rubin/system/rubin.rb:699:in `run'
+(eval):1:in `start'
+E:/Rubin/system/rubin.rb:1046:in `instance_eval'
+E:/Rubin/system/rubin.rb:1046:in `start'
+E:/Rubin/system/rubin.rb:406:in `post_initialization'
+E:/Rubin/system/rubin.rb:1075:in `<top (required)>'
+E:/Rubin/launch.rb:4:in `load'
+E:/Rubin/launch.rb:4:in `<main>'
+2023.02.24.07.19.27: 82925: Boot log was missing for this boot.
+2023.02.24.07.19.37: 10126: Boot log was missing for this boot.
+2023.02.24.07.19.37: 88952: Boot log was missing for this boot.
+2023.02.24.07.19.37: 53890: Boot log was missing for this boot.
+2023.02.24.07.19.37: 97561: Boot log was missing for this boot.
+2023.02.24.07.19.37: 77093: Boot log was missing for this boot.
+2023.02.24.07.19.39: 95002: Boot log was missing for this boot.
+2023.02.24.07.19.39: 72363: Boot log was missing for this boot.
+2023.02.24.07.19.39: 39528: Boot log was missing for this boot.
+2023.02.24.07.19.39: 20295: Boot log was missing for this boot.
+2023.02.24.07.19.40: 20973: Boot log was missing for this boot.
+2023.02.24.07.19.41: 53609: Boot log was missing for this boot.
+2023.02.24.07.19.41: 50810: Boot log was missing for this boot.
+2023.02.24.07.19.54: 2911: Boot log was missing for this boot.
+2023.02.24.07.19.54: 50826: Boot log was missing for this boot.
+2023.02.24.07.19.54: 50810: Boot log was missing for this boot.
+2023.02.24.07.19.54: 14650: Boot log was missing for this boot.
+2023.02.24.07.19.54: 52576: Boot log was missing for this boot.
+2023.02.24.07.19.54: 92513: Boot log was missing for this boot.
+2023.02.24.07.19.54: 91863: Boot log was missing for this boot.
+2023.02.24.07.19.54: 15645: Boot log was missing for this boot.
+2023.02.24.07.19.55: 44410: Boot log was missing for this boot.
+2023.02.28.13.11.40: 80882: App encountered an exception.
+Webspider cannot see BilboDatabase, startup cannot proceed.
+(eval):12:in `initialize'
+(eval):132:in `new'
+(eval):132:in `run'
+E:/Rubin/system/rubin.rb:699:in `eval'
+E:/Rubin/system/rubin.rb:699:in `run'
+(eval):1:in `start'
+E:/Rubin/system/rubin.rb:1046:in `instance_eval'
+E:/Rubin/system/rubin.rb:1046:in `start'
+E:/Rubin/system/rubin.rb:406:in `post_initialization'
+E:/Rubin/system/rubin.rb:1075:in `<top (required)>'
+E:/Rubin/launch.rb:4:in `load'
+E:/Rubin/launch.rb:4:in `<main>'
+2023.02.28.13.12.00: 80882: App encountered an exception.
+uninitialized constant RubinSystem::WebSpider::Url_Bible
+(eval):37:in `post_initialize'
+(eval):133:in `run'
+E:/Rubin/system/rubin.rb:699:in `eval'
+E:/Rubin/system/rubin.rb:699:in `run'
+(eval):1:in `start'
+E:/Rubin/system/rubin.rb:1046:in `instance_eval'
+E:/Rubin/system/rubin.rb:1046:in `start'
+E:/Rubin/system/rubin.rb:406:in `post_initialization'
+E:/Rubin/system/rubin.rb:1075:in `<top (required)>'
+E:/Rubin/launch.rb:4:in `load'
+E:/Rubin/launch.rb:4:in `<main>'

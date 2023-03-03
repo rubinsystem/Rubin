@@ -1,9 +1,18 @@
- #oh come on
-- App Controller is now a thing, now that we are demoing multiple apps that interact this component has become semi necessary
+
+rubin needs method: save_preconfig *args INT
+
+fix log:   log monitor needs to check file size once a second instead of reading and comparing files.
 
 
+idea : go into string and create an alias for ssplit
+
+
+
+
+2.11.23   - Adding github file puller/checker to install component, also rubin website latest version checker.  *move to changelog
+
+       - App Controller is now a thing, now that we are demoing multiple apps that interact this component has become semi necessary
 - network socket manager & rubin_network manager v 1.1 comming this summer
-
 
 current bug list:
 

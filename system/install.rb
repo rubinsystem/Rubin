@@ -209,17 +209,12 @@ class Installation_Manager
    
    ## Internet enabled methods
   
-   def pull_file(url) ## pulls raw files from github
-   
-   end
-   
-   def verify_file(path,url)  ## checks a file against its github counterpart, true if same.
-     
-   end
- 
-   def  check_latest_version   ## checks the rubin website for the latest version number
-   
-   end
+   # def pull_file(url) ## pulls raw files from github   
+   # end
+   # def verify_file(path,url)  ## checks a file against its github counterpart, true if same.
+   # end
+   # def  check_latest_version   ## checks the rubin website for the latest version number
+   # end
  
  
 end

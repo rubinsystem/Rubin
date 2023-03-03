@@ -2,6 +2,9 @@
 
 class BilboDataCrawler
   def initialize
+      
+ 	
+    
   end
   def post_initialize
   end

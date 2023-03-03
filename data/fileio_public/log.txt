@@ -1,3 +1,12 @@
-94819:0:2023.02.10.01.46.43: Dir log created. (//HOMESERVER/fileio_public)94819:0:2023.02.10.01.46.43
-<< instance.pop
->> true
+69991:0:2023.02.25.05.06.19: Dir log created. (//HOMESERVER/fileio_public)69991:0:2023.02.25.05.06.19
+<< self
+>> #<RubinSystem:0x0000020e26a43c20>
+69991:1:2023.02.25.05.06.46
+<< SYSTEM.writelog 'FUCK YOU'
+>> 
+31538:0:2023.03.02.14.23.33
+<< puts 'hello'
+>> 
+31538:1:2023.03.02.14.24.05
+<< puts 'hello'
+>> 

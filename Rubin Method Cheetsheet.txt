@@ -15,7 +15,7 @@ $CHARS / CHARS               useful
 $HEX / HEX
 $BINARY / BINARY
 
-SYSTEM._and                  some logic methods ** right now definitions do not touch main, that might be difficult to do for both
+SYSTEM._and                  later add these into main
 SYSTEM._or
 SYSTEM._nand
 SYSTEM._xor
@@ -28,12 +28,12 @@ Dir.viewdir                prints the current directory to the screen, can take 
 SYSTEM.vd                  an alias for Dir.view
 
 Time.stamp                         Returns a time stamp, or takes a timestamp and returns a Time class for it, and visa-versa.
-Time.parse_seconds                 Gets an array of timmer elements [hrs, mins, secs] from a gt integer of seconds.
+Time.parse_seconds                 Gets an array of timmer elements [hrs, mins, secs] from an integer of seconds.
 
-MAIN.class.Password                an insecure way to store temporary passwords.
+MAIN.class.Password                An insecure way to store temporary passwords.
 
 SYSTEM.dirs                     returns a list of system dirs, returns the path if the dir name is passed as an arg
-SYSTEM.homedir
+SYSTEM.homedir                  returns the installation directory.
 SYSTEM.classdir
 SYSTEM.sysdir
 SYSTEM.datadir
@@ -45,11 +45,11 @@ SYSTEM.apps?                 get a list of apps installed.
 SYSTEM.scripts?              get a list of runnable scripts.
 SYSTEM.run                   run an app
 SYSTEM.runs                  run a script file
-SYSTEM.config                return an array of cfg names and values, pass a name or index number to
-                             get a value, path that followed by a value to set it.
+
+SYSTEM.config? / SYSTEM.show_config  returns a list of config names and values that is more readable.
+SYSTEM.config                get an array of config names and values.
 SYSTEM.load_config           loads default config, can take an arg of config file path
 SYSTEM.save_config           saves default cfg file, pass a filepath with name to save cfg as.
-SYSTEM.config? / SYSTEM.show_config  returns a list of config names and values that is more readable.
 SYSTEM.load_classes          load the classdir, can take an arg for alternate load dir
 SYSTEM.import_classes        pass path to a definition file to dissassemble it into individual files.
 SYSTEM.export_classes        pass a oath and name of file to export classdir files to.

@@ -51,10 +51,11 @@ if File.writable?($homedir)!= true
   msg=Time.now.to_s+" : ERROR : CRITICAL : Installation directory is not writable per host!"
   boot_log << msg
   puts boot_log.join("\n")
-  ##try to run anyways
+  ##try to run anyways  ## do something about this
 end
 
-## make a temporary log to help if this boot gets rockey.(one day)
+## either remove or revise this, we could add a revocery checker right after here
+## make a temporary log to help if we end up needing revocery.
 f=File.open($homedir+"/bootlog.log","w");f.write("\n"+Time.now.to_s+" : Boot initiated.\n"+boot_log.join("\n"));f.close
   
 ## Ensure system file exists.
@@ -106,13 +107,13 @@ class RubinSystem
     @userdir = @homedir+"/data/user"       
     @bindir=@homedir+"/bin"             
 
-	@daemond=nil              ## reserved for main system threadpool
+    @daemond=nil              ## reserved for main system threadpool
     @definitions=[]
-	@apps=[]                  ## list of app objs and threads loaded   
+    @apps=[]                  ## list of app objs and threads loaded   
     @components=[]		
-	@loaded_apps=[]           ## list of app loads on system
-    @classes=[]
-	@app=nil;@threads=[];     ## reserved for system 
+    @loaded_apps=[]           ## list of app loads on system  ##revise these too THIS IS SHIT CODE RIGHT HERE
+    @loaded_classes=[]
+    @app=nil;@threads=[];     ## reserved for system to launch apps 
 	
     @shell=nil
 	
@@ -139,6 +140,7 @@ class RubinSystem
 	@config_names=["LoadClasses","AutoStartApps","RubinStartOnBoot",
     "SystemShellAutoStart","DebugMode","DaemondDelay","ShowLogWrites",
     "CtrlNetdir","LoadDefinition","EvaluateFileIO","EvaluateFileIOPrint","RubyGems","AutoScripts"]
+	
 	@config_descriptions=["",
 	                      "",
 						  "",
@@ -584,6 +586,24 @@ class RubinSystem
 	  return false
 	end
   end
+ 
+
+
+  # def create_preconfig  *args   #3 add preconfig, check for what number it should be
+     # if args.length == 0                    ##make one from loaded config
+     # elsif  File.file?(args[0].to_s)            ##copy this file into one
+     # else                                                                         ## invalid arguement or no such file
+     # end
+  
+     
+      	 
+    
+    
+    	 
+  # end
+  
+
+ 
   
   def repair_config
     self.writelog("System Config data is being repaired.")
@@ -676,7 +696,7 @@ class RubinSystem
 	  self.writelog("Loading app file: "+appname.to_s+".rb")
       f=File.open(path,"r");source=f.read;f.close
 	  @threads=[];threads=[];@app=nil;@appshell=false
-	  self.eval(source)
+	  self.eval(source)  ## WTF ARE YOU DOING HERE
 
 	  if @threads.length>0
 	    @threads.each {|t| threads << t }

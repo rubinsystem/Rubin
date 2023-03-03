@@ -1,8 +1,8 @@
-
+  
 class BilboDatabase
   def initialize *args
     @logfilepath=SYSTEM.logdir+"/bilbodatabase.log"
-	@appdatadir=SYSTEM.appdatadir+"/bilbodatabase"
+    @appdatadir=SYSTEM.appdatadir+"/bilbodatabase"
     @cfgfilepath=@appdatadir+"/dbconfig.txt"
 	@bank_dir=@appdatadir+"/bank"
 	@loaded_bank_dir=""
@@ -180,7 +180,7 @@ class BilboDatabase
 
 
 ##  Web Page Information Object v 1.1
-##
+##  depreciated to classdir
 
 
 end
