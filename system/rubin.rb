@@ -1,4 +1,4 @@
-INSTALLATION_HEADER=["installed", "e:/rubin", "1.0.rev01", "2023.2.1", "thoma", "D94JG8EH4"]
+INSTALLATION_HEADER=["installed", "e:/rubin", "1.0.015", "2023.2.1", "thoma", "D94JG8EH4"]
 ##First line will always be the install headder
 
 #in later versions we will control this.
@@ -197,8 +197,13 @@ class RubinSystem
 		  else  ##config missing, repair and boot with ini defualt config
 		    self.save_config
 			str = "Config data was missing or corrupted and had to be restored to default."
+			puts str.to_s
 		  end
 		end
+	  else  ##cfgdir is empty
+	    self.save_config
+		str = "Config data was missing or corrupted and had to be restored to default."
+	    puts str.to_s
 	  end
 	end
 

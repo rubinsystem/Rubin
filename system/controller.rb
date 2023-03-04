@@ -1,4 +1,4 @@
-##controller component
+##controller v1.0 2023.3.4
 
 class Controller          ## virtual network vis shared windows folders
   def initialize
@@ -85,7 +85,7 @@ class Controller          ## virtual network vis shared windows folders
 	    if ee.split("/")[-1][0..11]=="fileio_link-"
 	      fp = ee
 		  begin;  str=File.read(fp)
-		  rescue;  SYSTEM.errorlog("Controller dir cleaner thread had a read failure so the loop itteration was skipped.");  next
+		  rescue;  SYSTEM.errorlog("Controller dir cleaner thread had a read failure so the itteration was skipped.");  next
 		  end
 		  str2=Time.stamp(str)
 		  tn = Time.now
@@ -209,7 +209,7 @@ class Controller          ## virtual network vis shared windows folders
 
   def log;  return self.binding.log;  end
 
-  def dir;  return self.binding.dir;  end
+  def ndir;  return self.binding.ndir;  end
   
   
 
@@ -354,7 +354,7 @@ class Controller          ## virtual network vis shared windows folders
 	  end
 	end
 	
-    def dir;  return @dir;  end
+    def ndir;  return @dir;  end
 	
 	def log; return @private_log;  end
   

@@ -61,6 +61,7 @@ class Installation_Manager
     self.build_package(a,b)
   end
   
+  def make;  return self.default_build_package;  end
   
   ## build a source package file from installed version
   def build_package *args #(included_files,included_dir_paths)     
