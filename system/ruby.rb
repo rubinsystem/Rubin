@@ -21,9 +21,9 @@ class Ruby_Manager
   def load_config
     if File.file?(@cfgpath)
 	  begin;d=File.read(@cfgpath);d=eval(d);@config=d
-	  rescue;SYSTEM.errorlog("Ruby Config could not be loaded, it might be corrupted.")
+	  rescue;#SYSTEM.errorlog("Ruby Config could not be loaded, it might be corrupted.")
 	  end
-	else;SYSTEM.errorlog("Ruby Config was missing, it had be restored.")
+	else;#SYSTEM.errorlog("Ruby Config was missing, it had be restored.")
 	  f=File.open(@cfgpath,"w");f.write(@default_config.to_s);f.close
 	end  
   end

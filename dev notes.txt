@@ -1,17 +1,22 @@
 
-rubin needs method: save_preconfig *args INT
+???could we tweak the if statement to have an abort or keep and and jump to jump to else call
 
-fix log:   log monitor needs to check file size once a second instead of reading and comparing files.
+Fix show logwrites config setting
 
-
-idea : go into string and create an alias for ssplit
-
+Added File.view to definitions, fix return info values.
 
 
+Protocol Style:  checking file sizes is a good way to see when logs change, checking file last modified time
+                 can be a better substitute for opening and reading timestamp files. this depends on the host
+                 to be reliable.
 
-2.11.23   - Adding github file puller/checker to install component, also rubin website latest version checker.  *move to changelog
 
-       - App Controller is now a thing, now that we are demoing multiple apps that interact this component has become semi necessary
+idea : go into string and create an alias for split
+make sure string splice method is added by v1.1 release
+
+Add github raw file puller/checker to install component
+also rubin website latest version checker
+
 - network socket manager & rubin_network manager v 1.1 comming this summer
 
 current bug list:

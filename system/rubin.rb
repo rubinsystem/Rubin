@@ -15,6 +15,7 @@ if Dir.getwd.to_s.downcase!=INSTALLATION_HEADER[1].to_s.downcase
   if File.exist?(INSTALLATION_HEADER[1])
     ##external launch, chdir to install
 	Dir.chdir(INSTALLATION_HEADER)
+	
 	$homedir=Dir.getwd	
   else
     ## the entire install directory has been unexpectedly moved 
@@ -154,40 +155,52 @@ class RubinSystem
 	
 	##check for preconfig.cfg first then config.cfg if it doesnt exist, preconfig can be stacked by adding a number to its name.
 	puts "Loading config data..."
-    preconfig=false
-	f=Dir.entries(@cfgdir)[2..-1]
-    if f.length>0
-	  pf=[]
-	  f.each do |ff|
-	    if ff.to_s.downcase[0..8]=="preconfig" and ff.to_s.downcase[-4..-1]==".cfg"
-          pf<<ff
-	    end
+
+	##check for altconfig first, then if none check for preconfig, if none load default config.
+	if File.file?(@cfgdir+"/altconfig.cfg")
+	  altconfig=@cfgdir+"/altconfig.cfg"
+	  f=File.open(altconfig,"r");  altconfig=@cfgdir+"/"+f.read;  f.close
+      if File.file?(altconfig)
+	    v=self.load_config(altconfig)
+        str = "Loaded alternate config: "+altconfig.to_s
+		self.writelog(str)
+		puts str.to_s
+	  else
+	    str = "Altconfig could not be found."
+		self.errorlog(str)
+		puts str.to_s
 	  end  
-	  if pf.length>0
-	    pf=pf.sort
-		preconfig=@cfgdir+"/"+pf[0].to_s
+	else ## no altconfig  
+	  ##check for preconfig
+	  f=Dir.entries(@cfgdir)[2..-1]
+      if f.length>0
+	    pf=[]
+	    f.each do |ff|
+	      if ff.to_s.downcase[0..8]=="preconfig" and ff.to_s.downcase[-4..-1]==".cfg"
+            pf<<ff
+	      end
+	    end  
+	    if pf.length>0
+	      pf=pf.sort
+          preconfig=@cfgdir+"/"+pf[0].to_s
+		  v=self.load_config(preconfig)	
+		  n=preconfig.to_s.split("/")[-1]
+		  str = "Loaded preconfig: "+n.to_s
+		  self.writelog(str)
+		  puts str
+	    else  ## no preconfig, try to load defualt config
+		  if File.file?(@cfgdir+"/config.cfg")
+		    v=self.load_config
+			str = "Loaded default config."
+			self.writelog(str)
+			puts str
+		  else  ##config missing, repair and boot with ini defualt config
+		    self.save_config
+			str = "Config data was missing or corrupted and had to be restored to default."
+		  end
+		end
 	  end
 	end
-	v=false
-	if preconfig!=false and File.file?(preconfig)
-      v=self.load_config(preconfig)
-	  if v !="error" and v != false
-        File.delete(preconfig)
-      end	  
-	  puts "Loaded preconfig: "+preconfig.split("/")[-1].to_s
-    else ## no preconfig
-	  v=self.load_config
-	  puts "Default config was loaded."
-	end
-	
-	if v=="error"
-	  self.errorlog("Config file was corrupted. Restoring to default.")
-	  self.save_config
-	elsif v==false
-	  self.errorlog("Restoring config to default")
-	  self.save_config
-	end
-
 
 	##load/install rubygems
 	if @config[11].length>0
@@ -378,7 +391,7 @@ class RubinSystem
 		end
 	  end
 	  self.writelog("System startup successfull.")
- 	  puts "Startup complete Rubin is now running!, Started up in "+(Time.now-BOOT_INIT_TIME).to_s[0..3]+" seconds.\nThe time is: "+Time.now.to_s
+ 	  puts "Startup complete Rubin is now running!, Started up in "+(Time.now-BOOT_INIT_TIME).to_s[0..3]+" seconds. "+Time.now.to_s
 	  
 	  if @config[12].length>0
 	    @config[12].each do |f|
@@ -408,6 +421,8 @@ class RubinSystem
 	  end	  
     end
   end
+  
+  def cls;  SYSTEM.shell.cls;  end
 
   def shutdown *args
     proceed=false
@@ -467,14 +482,47 @@ class RubinSystem
 	exit
   end
   
+  def save_altconfig *args
+    if args.length == 0
+      f=File.open(@cfgdir+"/altconfig.cfg","w");  f.write("config.cfg");  f.close
+	  return true
+	else	  
+      f=File.open(@cfgdir+"/altconfig.cfg","w");  f.write(args[0].to_s);  f.close
+	  return true
+	end
+  end
   
+  def altconfig?
+    if File.file?(@cfgdir+"/altconfig.cfg")
+      f=File.open(@cfgdir+"/altconfig.cfg","r");  d=f.read;  f.close
+	  d=@cfgdir+"/"+d
+	  if File.file?(d);  return true
+	  else;  return false
+	  end
+    else;  return false
+	end
+  end
+
+  def remove_altconfig
+    if self.altconfig?
+	  begin;  File.delete(@cfgdir+"/altconfig.cfg");  return true
+	  rescue;  self.errorlog("Failed to delete altconfig file.");  return false
+	  end
+	else;  return false
+	end
+  end
+  
+  def delete_altconfig; return self.remove_altconfig;  end
 
   def writelog *args# ad option to print
-	if File.file?(@logdir+"/systemlog.log")==false;f=File.open(@logdir+"/systemlog.log");f.close;end
+	if File.file?(@logdir+"/systemlog.log")==false;f=File.open(@logdir+"/systemlog.log","w");f.close;end
 	ts=Time.now.to_s.split(" ")[0..1].join(".").split(":").join(".").split("-").join(".")
 	str="\n"+ts+": "+INSTANCE.to_s+": "+args[0].to_s
 	f=File.open(@logdir+"/systemlog.log","a");f.write(str);f.close
-	if args[1].to_s.downcase=="true";puts "\n"+args[0].to_;end
+	if args[1].to_s.downcase=="true" and @config[6].to_s != "true";  puts "\n"+args[0].to_
+	elsif @config[6].to_s == "true"
+	  puts args[0].to_s
+	end
   end
 
   def errorlog(msg)  
@@ -506,7 +554,6 @@ class RubinSystem
 	end
   end
   
-
   def get_config;return @config;end
   
   def shell;return @shell;end
@@ -586,25 +633,67 @@ class RubinSystem
 	  return false
 	end
   end
- 
+   
+  def preconfig?
+    cfgs=[]
+    Dir.entries(@cfgdir)[2..-1].each { |i| if i.to_s.downcase[0..8]=="preconfig";  cfgs << i;  end }
+    if cfgs.length == 0 ;  return false
+	else;  return cfgs
+	end
+  end
 
-
-  # def create_preconfig  *args   #3 add preconfig, check for what number it should be
-     # if args.length == 0                    ##make one from loaded config
-     # elsif  File.file?(args[0].to_s)            ##copy this file into one
-     # else                                                                         ## invalid arguement or no such file
-     # end
-  
-     
-      	 
+  def save_preconfig *args   ##give a preconfig number or it will be assigned automatically, this can overwrite existing preconfigs
+    if args.length!=0;  i=args[0].to_i
+	else
+	  cfgs=[]
+      Dir.entries(@cfgdir)[2..-1].each { |i| if i.to_s.downcase[0..8]=="preconfig";  cfgs << i;  end }
+      i=cfgs.length
+    end
+	path=@cfgdir+"/preconfig"+i.to_s+".cfg"
+	f=File.open(path,"w");  f.write(@config.to_s);  f.close
+    return i
+  end
     
-    
-    	 
-  # end
+  def lock_preconfig
+    begin;  f=File.open(@cfgdir+"/lock_preconfig.cfg","w");f.write(Time.stamp);f.close
+	rescue;  raise "Failed to create '"+@cfgdir.to_s+"/lock_preconfig.cfg'"
+	end
+	return true
+  end
   
+  def unlock_preconfig
+    begin
+	  File.delete(@cfgdir.to_s+"/lock_preconfig.cfg")	
+	rescue;  raise "Failed to delete: '"+@cfgdir.to_s+"/lock_preconfig.cfg'"
+	end
+	return true
+  end
+  
+  def preconfig_locked?;  return File.file?(@cfgdir+"/lock_preconfig.cfg");  end
 
- 
-  
+  def create_preconfig *args      ## config, integer
+    if args[0].is_a?(Array)
+	  if args[0].length != @config.length
+	    raise "Given config array does not match system config array length."
+	  end
+	else; raise "First arguement must be config array."
+	end
+	if args.length==1
+	  cfgs=[]
+      Dir.entries(@cfgdir)[2..-1].each { |i| if i.to_s.downcase[0..8]=="preconfig";  cfgs << i;  end }
+      i=cfgs.length
+    else
+	  if args[1].is_a?(Integer) == false
+	    raise "Second arguement is not an integer."
+	  else
+	    i=args[1].to_i
+	  end
+	end
+	path=@cfgdir+"/preconfig"+i.to_s+".cfg"
+	f=File.open(path,"w");  f.write(args[0].to_s);  f.close
+    return i
+  end
+
   def repair_config
     self.writelog("System Config data is being repaired.")
     @config=@default_config 
@@ -1064,6 +1153,9 @@ class RubinSystem
     def stop
       @main_loop=false
     end
+	
+	def cls;  system("CLS");  return "The screen was cleared.";  end
+	
   end
    
 end

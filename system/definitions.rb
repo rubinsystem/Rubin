@@ -494,6 +494,22 @@ alias :vd :viewdir
 #8#;#3#;#5#;#3#;#1#;#8#;#3#;#5#;#3#;#8#;#5##file.rb#5#;#6#;#9#;#9#;#4#;#5#;#6#;#7#;#9#;#6#;#4##file.rb
 File.instance_eval{
   
+  def view(path)
+    if File.file?(path.to_s)
+	  begin
+	    f=File.open(path.to_s,"r");cont=f.read;  f.close
+		if cont.length == 0
+		  return "The file is empty."
+		else
+		  print "\n"+cont.to_s+"\n\n"
+		  return "File: "+path.split("/")[-1].to_s+"  Location: "+path.to_s
+		end
+	  rescue;  raise "Failed to read file: "+path.to_s
+	  end
+	else;  raise "No such file: "+path.to_s
+    end
+  end
+  
   def make(path);f=File.open(path,"wb");f.close;return true;end
 
   def prepend(p,s)

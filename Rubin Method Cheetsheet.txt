@@ -46,10 +46,19 @@ SYSTEM.scripts?              get a list of runnable scripts.
 SYSTEM.run                   run an app
 SYSTEM.runs                  run a script file
 
-SYSTEM.config? / SYSTEM.show_config  returns a list of config names and values that is more readable.
+SYSTEM.config?               returns a list of config names and values that is more readable. Alias of show_config.
 SYSTEM.config                get an array of config names and values.
 SYSTEM.load_config           loads default config, can take an arg of config file path
 SYSTEM.save_config           saves default cfg file, pass a filepath with name to save cfg as.
+SYSTEM.save_preconfig        saves current config as a numbered preconfig, 0 if one doesnt already exist,
+                             pass an integer to overwrite an existing preconfig.
+SYSTEM.create_preconfig      pass a config array to save as a preconfig, pass an integer as the second argument
+                             to overwrite an existing preconfig.
+SYSTEM.preconfig?            Returns list of preconfig file names, or false if there are none.
+SYSTEM.lock_preconfig        If preconfig is locked, a preconfig file wont be deleted after it is loaded.
+SYSTEM.unlock_preconfig      Removes the 'lock_preconfig.cfg' tag file from the config dir.
+SYSTEM.preconfig_locked?     Returns true if there is a 'lock_preconfig.cfg' file in the config dir.
+
 SYSTEM.load_classes          load the classdir, can take an arg for alternate load dir
 SYSTEM.import_classes        pass path to a definition file to dissassemble it into individual files.
 SYSTEM.export_classes        pass a oath and name of file to export classdir files to.

@@ -131,6 +131,6 @@ class Url_Bible
 end
     
 
-@app=Url_Bible.new()  ##for system
+@app=Url_Bible.new()
 
 $urlbible=@app

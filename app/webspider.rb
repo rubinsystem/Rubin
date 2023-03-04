@@ -25,6 +25,11 @@ class WebSpider
     @cfgfile=SYSTEM.cfgdir+"/webspider.cfg"
 	if File.file?(@cfgfile);  f=File.open(@cfgfile,"w");f.close;end
     
+	@datafile=@appdatadir+"/webspider.dat"
+	
+	@crawl_pointer=0
+	@crawl_start_time=nil
+	@que=[]
     @state="init"
     @running=nil
     @main_thread=nil
@@ -33,9 +38,10 @@ class WebSpider
 	
   end
 
-  def generate_que
+  def begin_new_crawl
     
-	
+	@crawl_pointer = 0
+	@crawl_start_time = Time.stamp
     
   end
 
@@ -65,7 +71,17 @@ class WebSpider
   end
 
 
-
+  def crawl_step
+    
+	url = $urlbible.get(@crawl_pointer)
+	
+	check = $bilbo.search(url)
+	
+	
+	
+	@crawl_pointer+=1
+	
+  end
 
 
 
