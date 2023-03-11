@@ -1,3 +1,4 @@
+v1.016.0    3.10.2023    - Made required files a config setting, they are loaded before rubygem in config load now.
 v1.015.0    3.4.2023     - Rewrote the config load for system boot. Documentation will follow.
 v1.014.0    3.4.2023     - Updated preconfig handeling, added features.
 v1.001.2    2.10.2023    - App_Controller component was added to system standard components.

@@ -1,10 +1,7 @@
-INSTALLATION_HEADER=["installed", "e:/rubin", "1.0.015", "2023.2.1", "thoma", "D94JG8EH4"]
+INSTALLATION_HEADER=["installed", "e:/rubin", "1.0.016", "2023.3.10", "thoma", "D94JG8EH4"]
 ##First line will always be the install headder
 
-#in later versions we will control this.
-require 'bundler/inline'
-require 'open-uri'
-require 'net/http'
+## requires are now handeled by config loader.
 
 puts "Checking system...";BOOT_INIT_TIME=Time.now
 boot_log=[]
@@ -112,7 +109,8 @@ class RubinSystem
     @definitions=[]
     @apps=[]                  ## list of app objs and threads loaded   
     @components=[]		
-    @loaded_apps=[]           ## list of app loads on system  ##revise these too THIS IS SHIT CODE RIGHT HERE
+    @loaded_files=[]          ## list of every file loaded since runtime.
+	@loaded_apps=[]           ## list of app loads on system  ##revise these too THIS IS SHIT CODE RIGHT HERE
     @loaded_classes=[]
     @app=nil;@threads=[];     ## reserved for system to launch apps 
 	
@@ -138,7 +136,7 @@ class RubinSystem
 
     	
 	## setup config data
-	@config_names=["LoadClasses","AutoStartApps","RubinStartOnBoot",
+	@config_names=["LoadClasses","AutoStartApps","Required",
     "SystemShellAutoStart","DebugMode","DaemondDelay","ShowLogWrites",
     "CtrlNetdir","LoadDefinition","EvaluateFileIO","EvaluateFileIOPrint","RubyGems","AutoScripts"]
 	
@@ -149,9 +147,9 @@ class RubinSystem
 						  "",
 						  ""]
 	
-	@default_config=[true,[],false,true,true,10,false,"",true,false,false,[],[]]
+	@default_config=[true,[],["bundler/inline","open-uri","net/http"],true,true,10,false,"",true,false,false,[],[]]
     @config=@default_config
-	
+	@loaded_config=""
 	
 	##check for preconfig.cfg first then config.cfg if it doesnt exist, preconfig can be stacked by adding a number to its name.
 	puts "Loading config data..."
@@ -161,7 +159,7 @@ class RubinSystem
 	  altconfig=@cfgdir+"/altconfig.cfg"
 	  f=File.open(altconfig,"r");  altconfig=@cfgdir+"/"+f.read;  f.close
       if File.file?(altconfig)
-	    v=self.load_config(altconfig)
+	    v=self.load_config(altconfig);  @loaded_config = altconfig
         str = "Loaded alternate config: "+altconfig.to_s
 		self.writelog(str)
 		puts str.to_s
@@ -183,28 +181,49 @@ class RubinSystem
 	    if pf.length>0
 	      pf=pf.sort
           preconfig=@cfgdir+"/"+pf[0].to_s
-		  v=self.load_config(preconfig)	
+		  v=self.load_config(preconfig);  @loaded_config = preconfig
 		  n=preconfig.to_s.split("/")[-1]
 		  str = "Loaded preconfig: "+n.to_s
 		  self.writelog(str)
 		  puts str
 	    else  ## no preconfig, try to load defualt config
 		  if File.file?(@cfgdir+"/config.cfg")
-		    v=self.load_config
+		    v=self.load_config;  @loaded_config = "config.cfg"
 			str = "Loaded default config."
 			self.writelog(str)
 			puts str
 		  else  ##config missing, repair and boot with ini defualt config
-		    self.save_config
+		    self.save_config ; @loaded_config = "config.cfg"
 			str = "Config data was missing or corrupted and had to be restored to default."
 			puts str.to_s
 		  end
 		end
 	  else  ##cfgdir is empty
-	    self.save_config
+	    self.save_config ;  @loaded_config = "config.cfg"
 		str = "Config data was missing or corrupted and had to be restored to default."
 	    puts str.to_s
 	  end
+	end
+
+    ##require files
+    
+	if @config[2].is_a?(Array)
+	  begin
+	    @config[2].each do |f|
+		  require  f.to_s ; @loaded_files<<f
+		  self.writelog("aquired required file: "+f.to_s)
+		end
+	    if @loaded_files.length > 0
+		  if @loaded_files.length>9;  s = @loaded_files.length.to_s+" ";  else;  s = "";  end
+		  puts s+"Required files were loaded: "+@loaded_files.join(", ")
+		end
+      rescue => e
+	    self.errorlog("Required file produced this exception:  "+ e.to_s+"\n"+e.backtrace.join("\n")+"\n")
+	  end
+	elsif @config.to_s=="false"
+	else ## config is invalid type
+	  self.writelog("Config 2 Requied contains invalid data. It will be repaired.")
+	  ##we could save config if its default, we dont want to do that if its pre or alt so do nothing for now
 	end
 
 	##load/install rubygems
@@ -222,22 +241,21 @@ class RubinSystem
               source 'https://rubygems.org'
               gem r.to_s
             end
-		    require r.to_s
-		  rescue;msg="Ruby gem could not be installed: "+r.to_s
+		    require r.to_s ; @loaded_files << r
+		  rescue;msg="Ruby gem could not be installed: "
 		    self.errorlog(msg);
 		    puts msg
           end
-		else;require r.to_s
+		else;require r.to_s ;  @loaded_files << r
 		end
 	  end
 	end  
-	 
-	##load definition if configured
+	      
+	##load definition/s if configured
     if @config[8].to_s=="true" and File.file?(@homedir+"/system/definitions.rb") == true
-	  
 	  begin
 		SYSTEM.instance_eval(File.read(@homedir+"/system/definitions.rb"))
-		@definitions<<"definitions.rb"
+		@definitions<<"definitions.rb" ; @loaded_files<<"definitions.rb"
 		puts "Applied definition: definitions.rb"
 	  rescue => e
 	    msg="Definitions.rb produced an excption.\n"+e.to_s+"\n"+e.backtrace[0..5].join("\n")
@@ -249,7 +267,7 @@ class RubinSystem
 	  puts "Loading "+@config[8].length.to_s+" definitions..."
 	  @config[8].each do |file|
 	    begin
-	      SYSTEM.instance_eval(File.read(@datadir+"/definitions/"+file.to_s))
+	      SYSTEM.instance_eval(File.read(@datadir+"/definitions/"+file.to_s));  @loaded_files << file
 		  @definitions<<file.to_s
 		  puts "Applied definition: "+file.to_s
 	    rescue => e
@@ -718,7 +736,7 @@ class RubinSystem
 	  self.writelog("Classes found: "+(n.length-2).to_s)
  	  @classes=[]
 	  Dir.entries(@classdir)[2..-1].each do |i|
-        begin;load @classdir+"/"+i; @classes<<i.to_s
+        begin;load @classdir+"/"+i; @classes<<i.to_s ; @loaded_files << i
 		  self.writelog("Loaded class: "+i)
 	    rescue => e
 		  self.errorlog("Loading class file failed: "+i+"\n"+e.to_s+"\n"+e.backtrace.join("\n").to_s)

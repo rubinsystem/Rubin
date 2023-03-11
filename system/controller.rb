@@ -47,7 +47,7 @@ class Controller          ## virtual network vis shared windows folders
   
   def start_main_binding
     if @binding != nil;  return false;  end
-	@binding=FileIO_Eval_Binder.new(@network_directory,"eval",true)
+	@binding=FileIO_Eval_Binder.new(@network_directory,"eval",true)  ## maybe change this to system config 7
     @binding.start
 	@bound=true
 	if File.file?(@network_directory+"/cleaner.tag") == false  ##if you have problems with files not getting deleted just run the cleaner thread manually for now

@@ -475,3 +475,35 @@ C:/Ruby32-x64/bin/irb:33:in `<main>'
 2023.03.04.13.15.48: 39512: Altconfig could not be found.
 2023.03.04.13.16.07: 64599: Altconfig could not be found.
 2023.03.04.13.24.24: 36318: Failed to delete altconfig file.
+2023.03.05.02.28.13: 40104: App encountered an exception.
+invalid byte sequence in UTF-8
+(eval):39:in `split'
+(eval):39:in `block in run'
+(eval):17:in `each'
+(eval):17:in `run'
+E:/Rubin/system/rubin.rb:793:in `eval'
+E:/Rubin/system/rubin.rb:793:in `run'
+(eval):1:in `start'
+E:/Rubin/system/rubin.rb:1140:in `instance_eval'
+E:/Rubin/system/rubin.rb:1140:in `start'
+E:/Rubin/system/rubin.rb:424:in `post_initialization'
+E:/Rubin/system/rubin.rb:1172:in `<top (required)>'
+E:/Rubin/launch.rb:4:in `load'
+E:/Rubin/launch.rb:4:in `<main>'
+2023.03.10.11.25.06: 73548: App encountered an exception.
+undefined method `each' for nil:NilClass
+(eval):99:in `run'
+E:/Rubin/system/rubin.rb:793:in `eval'
+E:/Rubin/system/rubin.rb:793:in `run'
+(eval):1:in `start'
+E:/Rubin/system/rubin.rb:1140:in `instance_eval'
+E:/Rubin/system/rubin.rb:1140:in `start'
+E:/Rubin/system/rubin.rb:424:in `post_initialization'
+E:/Rubin/system/rubin.rb:1172:in `<top (required)>'
+E:/Rubin/launch.rb:4:in `load'
+E:/Rubin/launch.rb:4:in `<main>'
+2023.03.10.18.27.07: 74039: Required file produced this exception:  undefined method `length' for nil:NilClass
+E:/Rubin/system/rubin.rb:217:in `startup'
+E:/Rubin/system/rubin.rb:1188:in `<top (required)>'
+E:/Rubin/launch.rb:4:in `load'
+E:/Rubin/launch.rb:4:in `<main>'

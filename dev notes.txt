@@ -1,15 +1,19 @@
+revist load definition code, i think it just checks for default or takes an array, make it also able to take
+a single string but dont mention that in the documentation as to not create confusion.
+
+at some point we need to do a config items reordering, now that we are adding "requires" it needs to go before
+any autostart apps or classes so they can pull from it.
+also notice "require" and "rubygems" settings run the same call "require 'file'"  they will be right next to
+eachother in settings, not sure which order
+
+when calling SYSTEM.config? the config is printed and the return value is supposed to be the boot loaded config
+file path but right now it just returns the path of the default config no matter which config actually got loaded.
+
+improve controller binding pool, fix fileio eval settings
 
 ???could we tweak the if statement to have an abort or keep and and jump to jump to else call
 
-Fix show logwrites config setting
-
 Added File.view to definitions, fix return info values.
-
-
-Protocol Style:  checking file sizes is a good way to see when logs change, checking file last modified time
-                 can be a better substitute for opening and reading timestamp files. this depends on the host
-                 to be reliable.
-
 
 idea : go into string and create an alias for split
 make sure string splice method is added by v1.1 release
@@ -17,9 +21,11 @@ make sure string splice method is added by v1.1 release
 Add github raw file puller/checker to install component
 also rubin website latest version checker
 
-- network socket manager & rubin_network manager v 1.1 comming this summer
+- network socket manager & rubin_network manager v 1.1 comming this summer to replace primitive fileio controler.
 
 current bug list:
 
-1. ShowLogWrites config setting doesnt do anything.
-2. Controller sometimes crashes when ctrlnetdir isnt set, also there may be some unrescued file writes causing rare errors.
+1. Controller sometimes crashes when ctrlnetdir isnt set  *** fixed, but,
+also there may be some unrescued file writes causing rare errors so i just made the rescue return nil.
+
+2. config settings for fileio are broken since "fileio controler" was converted to "networkdir controller fileio"

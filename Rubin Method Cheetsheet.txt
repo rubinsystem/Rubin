@@ -58,6 +58,10 @@ SYSTEM.preconfig?            Returns list of preconfig file names, or false if t
 SYSTEM.lock_preconfig        If preconfig is locked, a preconfig file wont be deleted after it is loaded.
 SYSTEM.unlock_preconfig      Removes the 'lock_preconfig.cfg' tag file from the config dir.
 SYSTEM.preconfig_locked?     Returns true if there is a 'lock_preconfig.cfg' file in the config dir.
+SYSTEM.save_altconfig        Saves default config as an altconfig. You can pass a conffig file name with its extension to set altconfig.
+SYSTEM.altconfig?            Returns false if no altconfig exists.
+SYSTEM.remove_altconfig      Deletes altconfig.
+SYSTEM.delete_altconfig      Alias to the method above.
 
 SYSTEM.load_classes          load the classdir, can take an arg for alternate load dir
 SYSTEM.import_classes        pass path to a definition file to dissassemble it into individual files.
@@ -75,6 +79,7 @@ SYSTEM.install.dir                                 See the install location.
 SYSTEM.install.default_index                       Returns an array used for creating installation packages. This will return a basic version of your installation.
 SYSTEM.install.version                             See rubin version number.
 SYSTEM.install.default_build_package               Generate a installpackage.txt in /Rubin/data/backups.
+SYSTEM.install.make                                Does the same as the method above, just an alias to it.
 SYSTEM.install.id                                  See installation finger print.
 SYSTEM.install.install_package(package,dest)       Installs a package.
 SYSTEM.install.build_package                       Builds a package from a custom input array of files and directories.
